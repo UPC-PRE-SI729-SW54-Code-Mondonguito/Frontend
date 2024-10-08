@@ -1,0 +1,44 @@
+<div class="language-toggle">
+</div>
+
+<div class="login-container">
+  <mat-card class="login-card">
+    <img src="assets/images/parkingnow.png" alt="Logo de ParkingNow" class="logo">
+    <h2 class="title">{{ 'LOGIN.TITLE' | translate }}</h2>
+
+    <p class="subtitle">{{ 'LOGIN.NO_ACCOUNT' | translate }} <a routerLink="/register" class="register-link">{{ 'LOGIN.REGISTER_HERE' | translate }}</a></p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="{{ 'LOGIN.EMAIL_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+          {{ 'LOGIN.EMAIL_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'LOGIN.PASSWORD' | translate }}</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}">
+      </mat-form-field>
+
+      <div class="checkbox-container">
+        <mat-checkbox formControlName="remember">{{ 'LOGIN.REMEMBER_ME' | translate }}</mat-checkbox>
+        <a routerLink="/forgot-password" class="forgot-password">{{ 'LOGIN.FORGOT_PASSWORD' | translate }}</a>
+      </div>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" routerLink="/reservations" type="submit" class="full-width">{{ 'LOGIN.LOGIN_BUTTON' | translate }}</button>
+      </div>
+    </form>
+
+    <div class="social-buttons">
+      <button mat-raised-button color="primary" class="facebook-button">
+        <mat-icon>facebook</mat-icon> Facebook
+      </button>
+      <button mat-raised-button color="warn" class="google-button">
+        <mat-icon>google</mat-icon> Google
+      </button>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,88 @@
+<div class="settings-container">
+  <div class="settings-row">
+    <mat-card class="settings-card">
+      <h2>Privacidad y política</h2>
+      <p>
+        Esta es una descripción resumida de la política de privacidad...
+        <span *ngIf="showMore">
+          <strong>Política de Privacidad - ParkingNow</strong><br><br>
+          En ParkingNow, nos comprometemos a proteger la privacidad y seguridad de los datos de nuestros usuarios. Esta política de privacidad describe cómo recopilamos, usamos y protegemos la información personal que nos proporcionas cuando utilizas nuestra plataforma.<br><br>
+
+          <strong>1. Recopilación de información</strong><br>
+          Recopilamos la información personal que nos proporcionas al registrarte en nuestra plataforma, realizar reservas de estacionamiento o al ponerte en contacto con nosotros. Esto incluye:<br>
+          - Nombre completo<br>
+          - Dirección de correo electrónico<br>
+          - Información del vehículo (como la matrícula)<br>
+          - Ubicación geográfica (para ofrecerte opciones de estacionamiento cercanas)<br>
+          - Información de pago, en caso de realizar transacciones en la plataforma<br><br>
+
+          <strong>2. Uso de la información</strong><br>
+          Utilizamos tu información personal para:<br>
+          - Gestionar tu cuenta y procesar tus solicitudes de reserva<br>
+          - Enviarte notificaciones y actualizaciones sobre el estado de tu reserva<br>
+          - Mejorar la experiencia del usuario en la plataforma<br><br>
+
+          <strong>3. Compartir información</strong><br>
+          No compartimos tu información personal con terceros sin tu consentimiento, a menos que sea necesario para cumplir con requisitos legales o procesar tus solicitudes de reserva.<br><br>
+
+          <strong>4. Seguridad de la información</strong><br>
+          Implementamos medidas de seguridad adecuadas para proteger tu información personal contra accesos no autorizados o alteraciones. Sin embargo, ningún sistema de seguridad es infalible, y no podemos garantizar la seguridad absoluta de los datos.<br><br>
+
+          <strong>5. Tus derechos</strong><br>
+          Puedes acceder, modificar o eliminar tu información personal en cualquier momento a través de la configuración de tu cuenta o contactándonos directamente.<br><br>
+
+          <strong>6. Cambios en esta política</strong><br>
+          Nos reservamos el derecho a actualizar esta política de privacidad en cualquier momento. Te notificaremos de cualquier cambio significativo a través de nuestra plataforma o por correo electrónico.<br>
+        </span>
+      </p>
+      <button mat-button color="primary" (click)="toggleShowMore()">{{ showMore ? 'Ver menos' : 'Ver más' }}</button>
+    </mat-card>
+
+    <mat-card class="settings-card">
+      <h2>Idioma</h2>
+      <mat-select [(value)]="selectedLanguage">
+        <mat-option value="es">Español</mat-option>
+        <mat-option value="en">Inglés</mat-option>
+      </mat-select>
+    </mat-card>
+  </div>
+
+  <div class="settings-row">
+    <mat-card class="settings-card">
+      <h2>Pedir reembolso</h2>
+      <form [formGroup]="refundForm" (ngSubmit)="submitRefund()">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Motivo del reembolso</mat-label>
+          <textarea matInput formControlName="reason"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Enviar</button>
+      </form>
+    </mat-card>
+
+    <mat-card class="settings-card">
+      <h2>Registrar robo de carro</h2>
+      <mat-form-field>
+        <mat-label>Descripción del robo</mat-label>
+        <textarea matInput [(ngModel)]="theftDescription"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="reportTheft()">Enviar</button>
+    </mat-card>
+  </div>
+
+  <div class="settings-row">
+    <mat-card class="settings-card full-width">
+      <h2>Eliminar cuenta</h2>
+      <p>¿Está seguro de que desea eliminar su cuenta? Esta acción no se puede deshacer.</p>
+      <button mat-raised-button color="warn" (click)="deleteAccount()">Eliminar cuenta</button>
+    </mat-card>
+    <button mat-raised-button color="accent" class="back-button" routerLink="/dashboard-driver" style="position: absolute; top: 16px; right: 16px;">Volver al Inicio</button>
+  </div>
+</div>

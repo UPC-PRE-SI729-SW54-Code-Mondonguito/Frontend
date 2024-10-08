@@ -1,0 +1,41 @@
+<<div class="notifications-header">
+  <h1>Notificaciones</h1>
+  <button mat-raised-button color="accent" routerLink="/dashboard-driver" class="back-button">
+    <mat-icon>arrow_back</mat-icon>
+    Volver al inicio
+  </button>
+</div>
+
+<div class="notifications-container">
+  <!-- Recibos -->
+  <div class="notification-section">
+    <h2>Recibos</h2>
+    <ul class="recibos-list">
+      <li>• Recibo #001 - Estacionamiento Lima Centro</li>
+      <li>• Recibo #002 - Estacionamiento Plaza Norte</li>
+      <li>• Recibo #003 - Estacionamiento Miraflores</li>
+    </ul>
+  </div>
+
+  <!-- Lugares favoritos -->
+  <div class="notification-section">
+    <h2>Lugares disponibles en sus lugares favoritos</h2>
+    <ul class="lugares-favoritos-list">
+      <li>
+        <mat-checkbox [(ngModel)]="lugares[0].seleccionado" (change)="onFavoriteChange(0)">
+          Lima Centro - Cerca de la playa
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox [(ngModel)]="lugares[1].seleccionado" (change)="onFavoriteChange(1)">
+          Miraflores - Parque Kennedy
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox [(ngModel)]="lugares[2].seleccionado" (change)="onFavoriteChange(2)">
+          Barranco - Estacionamiento Central
+        </mat-checkbox>
+      </li>
+    </ul>
+  </div>
+</div>

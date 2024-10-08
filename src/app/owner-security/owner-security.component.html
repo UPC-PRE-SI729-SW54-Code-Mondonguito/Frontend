@@ -1,0 +1,54 @@
+<div class="owner-security-container">
+  <!-- Botón para ir al inicio -->
+  <div class="back-to-home">
+    <button mat-stroked-button color="primary" routerLink="/dashboard-owner">Ir al Inicio</button>
+  </div>
+
+  <mat-card class="header-card mat-elevation-z4 animate-card">
+    <h1 class="title">Monitoreo de Seguridad</h1>
+    <p class="description">Visualiza los vehículos registrados y las alertas de seguridad más recientes</p>
+  </mat-card>
+
+  <!-- Sección de vehículos registrados -->
+  <div class="vehicles-section">
+    <mat-card class="vehicles-card mat-elevation-z4 animate-card">
+      <h2>Automóviles Registrados en los Locales</h2>
+      <mat-table [dataSource]="vehicles" class="mat-elevation-z8">
+        <ng-container matColumnDef="plate">
+          <mat-header-cell *matHeaderCellDef> Matrícula </mat-header-cell>
+          <mat-cell *matCellDef="let vehicle"> {{ vehicle.plate }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="model">
+          <mat-header-cell *matHeaderCellDef> Modelo </mat-header-cell>
+          <mat-cell *matCellDef="let vehicle"> {{ vehicle.model }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="owner">
+          <mat-header-cell *matHeaderCellDef> Propietario </mat-header-cell>
+          <mat-cell *matCellDef="let vehicle"> {{ vehicle.owner }} </mat-cell>
+        </ng-container>
+
+        <!-- Filas -->
+        <mat-header-row *matHeaderRowDef="['plate', 'model', 'owner']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['plate', 'model', 'owner'];"></mat-row>
+      </mat-table>
+    </mat-card>
+  </div>
+
+  <!-- Sección de alertas -->
+  <div class="alerts-section">
+    <mat-card class="alerts-card mat-elevation-z4">
+      <h2>Últimas Alertas Registradas</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let alert of alerts" class="alert-item">
+          <mat-icon matListIcon>warning_amber</mat-icon>
+          <div class="alert-content">
+            <h3 matLine class="alert-title">{{ alert.date | date: 'short' }} - {{ alert.type }}</h3>
+            <p matLine class="alert-description">{{ alert.description }}</p>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+</div>

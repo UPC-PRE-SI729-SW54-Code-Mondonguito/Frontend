@@ -1,0 +1,78 @@
+
+<div class="reservations-container">
+  <mat-card class="reservation-card">
+    <h2>Gestionar Reservaciones de Estacionamiento</h2>
+
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Matrícula del Vehículo</mat-label>
+        <input matInput formControlName="vehicleRegistration" placeholder="Ej. ABC-1234">
+        <mat-error *ngIf="reservationForm.get('vehicleRegistration')?.hasError('required') && reservationForm.get('vehicleRegistration')?.touched">
+          La matrícula es requerida
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Tipo de Vehículo</mat-label>
+        <mat-select formControlName="typeOfVehicle">
+          <mat-option value="Motorcycle">Motocicleta</mat-option>
+          <mat-option value="Truck">Camión</mat-option>
+          <mat-option value="Car">Coche</mat-option>
+        </mat-select>
+        <mat-error *ngIf="reservationForm.get('typeOfVehicle')?.hasError('required') && reservationForm.get('typeOfVehicle')?.touched">
+          El tipo de vehículo es requerido
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Hora de la Reserva</mat-label>
+        <input matInput formControlName="reservationTime" type="datetime-local">
+        <mat-error *ngIf="reservationForm.get('reservationTime')?.hasError('required') && reservationForm.get('reservationTime')?.touched">
+          La hora es requerida
+        </mat-error>
+      </mat-form-field>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" type="submit">Reservar</button>
+      </div>
+    </form>
+  </mat-card>
+
+  <mat-card class="reservation-list">
+    <h3>Reservaciones Actuales</h3>
+
+    <table mat-table [dataSource]="parkingReservations" class="mat-elevation-z8 full-width">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="vehicleRegistration">
+        <th mat-header-cell *matHeaderCellDef> Matrícula </th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.vehicleRegistration }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="typeOfVehicle">
+        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.typeOfVehicle }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="reservationTime">
+        <th mat-header-cell *matHeaderCellDef> Hora </th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.reservationTime }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Acción </th>
+        <td mat-cell *matCellDef="let reservation">
+          <button mat-icon-button color="warn" (click)="deleteReservation(reservation.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['id', 'vehicleRegistration', 'typeOfVehicle', 'reservationTime', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['id', 'vehicleRegistration', 'typeOfVehicle', 'reservationTime', 'actions']"></tr>
+    </table>
+  </mat-card>
+</div>

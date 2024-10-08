@@ -1,0 +1,52 @@
+<div class="support-container mat-elevation-z4">
+  <mat-toolbar color="primary" class="support-toolbar">
+    <span>Soporte</span>
+    <span class="spacer"></span>
+    <button mat-raised-button color="accent" routerLink="/dashboard-driver">Volver al Inicio</button>
+  </mat-toolbar>
+
+  <div class="support-content">
+    <!-- Tarjeta de Asistencia Virtual -->
+    <mat-card class="support-card">
+      <mat-card-header>
+        <mat-card-title>Asistencia virtual</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Asistencia virtual desde la página para resolver tus dudas. Estamos aquí para ayudarte.</p>
+
+        <!-- Formulario de entrada para dudas -->
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Escribe tu duda aquí</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">Enviar Duda</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Tarjeta de Contacta con Nosotros -->
+    <mat-card class="support-card">
+      <mat-card-header>
+        <mat-card-title>Contacta con nosotros</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Canales de contacto a servicio al cliente disponibles las 24 horas. ¡Estamos para escucharte!</p>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank">
+            <mat-icon svgIcon="github"></mat-icon>
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <mat-icon svgIcon="facebook"></mat-icon>
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <mat-icon svgIcon="instagram"></mat-icon>
+          </a>
+          <a href="mailto:support@domain.com">
+            <mat-icon svgIcon="email"></mat-icon>
+          </a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.owner-reservations-container {
+  padding: 20px;
+}
+
+.back-to-home {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.header-card {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-field {
+  flex: 1 1 200px;
+}
+
+.reservations-card {
+  padding: 20px;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 10px;
+}

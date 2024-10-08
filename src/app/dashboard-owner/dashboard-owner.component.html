@@ -1,0 +1,35 @@
+<div class="dashboard-owner-container">
+  <aside class="sidebar">
+    <img src="assets/images/parkingnow.png" alt="ParkingNow Logo" class="logo">
+    <nav class="menu">
+      <button mat-button routerLink="/dashboard-owner" class="menu-item">Inicio</button>
+      <button mat-button routerLink="/local-records" class="menu-item">Registro de locales</button>
+      <button mat-button routerLink="/owner-reservations" class="menu-item">Reservas</button>
+      <button mat-button routerLink="/owner-security" class="menu-item">Monitoreo y Alarmas</button>
+      <button mat-button routerLink="/owner-configuration" class="menu-item">Configuración</button>
+      <button mat-button routerLink="/login" class="menu-item">Cerrar sesión</button>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="welcome">
+      <h1>Bienvenido</h1>
+    </div>
+
+    <!-- Sección de Reservas para hoy -->
+    <section class="reservations-section">
+      <mat-card class="card">
+        <h2>Reservas para hoy</h2>
+        <p>Reservas programadas</p>
+      </mat-card>
+    </section>
+
+    <!-- Sección de Espacios -->
+    <section class="spaces-section">
+      <mat-card class="card">
+        <h2>Espacios</h2>
+        <p>Lista de espacios separados por: Lleno, reservado, vacío</p>
+      </mat-card>
+    </section>
+  </main>
+</div>
