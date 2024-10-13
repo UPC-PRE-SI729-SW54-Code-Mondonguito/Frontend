@@ -1,0 +1,54 @@
+<div class="owner-security-container">
+  <!-- Botón para ir al inicio -->
+  <div class="back-to-home">
+    <button mat-stroked-button color="primary" routerLink="/dashboard-owner">{{ 'OWNER_SECURITY.BACK_TO_HOME' | translate }}</button>
+  </div>
+
+  <mat-card class="header-card mat-elevation-z4 animate-card">
+    <h1 class="title">{{ 'OWNER_SECURITY.TITLE' | translate }}</h1>
+    <p class="description">{{ 'OWNER_SECURITY.DESCRIPTION' | translate }}</p>
+  </mat-card>
+
+  <!-- Sección de vehículos registrados -->
+  <div class="vehicles-section">
+    <mat-card class="vehicles-card mat-elevation-z4 animate-card">
+      <h2>{{ 'OWNER_SECURITY.REGISTERED_VEHICLES' | translate }}</h2>
+      <mat-table [dataSource]="vehicles" class="mat-elevation-z8">
+        <ng-container matColumnDef="plate">
+          <mat-header-cell *matHeaderCellDef> {{ 'OWNER_SECURITY.TABLE_HEADERS.PLATE' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let vehicle"> {{ vehicle.plate }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="model">
+          <mat-header-cell *matHeaderCellDef> {{ 'OWNER_SECURITY.TABLE_HEADERS.MODEL' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let vehicle"> {{ vehicle.model }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="owner">
+          <mat-header-cell *matHeaderCellDef> {{ 'OWNER_SECURITY.TABLE_HEADERS.OWNER' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let vehicle"> {{ vehicle.owner }} </mat-cell>
+        </ng-container>
+
+        <!-- Filas -->
+        <mat-header-row *matHeaderRowDef="['plate', 'model', 'owner']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['plate', 'model', 'owner'];"></mat-row>
+      </mat-table>
+    </mat-card>
+  </div>
+
+  <!-- Sección de alertas -->
+  <div class="alerts-section">
+    <mat-card class="alerts-card mat-elevation-z4">
+      <h2>{{ 'OWNER_SECURITY.ALERTS.TITLE' | translate }}</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let alert of alerts" class="alert-item">
+          <mat-icon matListIcon>warning_amber</mat-icon>
+          <div class="alert-content">
+            <h3 matLine class="alert-title">{{ alert.date | date: 'short' }} - {{ alert.type }}</h3>
+            <p matLine class="alert-description">{{ alert.description }}</p>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+.owner-configuration-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.owner-configuration-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.owner-configuration-card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+  background-color: #FAFAFA;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.owner-configuration-card.full-width {
+  flex: 1;
+}
+
+mat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #2C3E50;
+  margin-bottom: 12px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-top: 10px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .owner-configuration-container {
+    flex-direction: column;
+  }
+
+  .owner-configuration-row {
+    flex-direction: column;
+  }
+
+  .owner-configuration-card {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  button {
+    width: 100%;
+  }
+}

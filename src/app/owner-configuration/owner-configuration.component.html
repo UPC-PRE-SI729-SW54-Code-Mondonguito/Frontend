@@ -1,0 +1,77 @@
+<div class="owner-configuration-container">
+  <div class="owner-configuration-row">
+    <mat-card class="owner-configuration-card">
+      <h2>{{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.TITLE' | translate }}</h2>
+      <p>
+        {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.DESCRIPTION' | translate }}...
+        <span *ngIf="showMore">
+          <strong>{{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.TITLE' | translate }}</strong><br><br>
+          {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.TEXT' | translate }}<br><br>
+
+          <strong>{{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.COLLECTION_TITLE' | translate }}</strong><br>
+          {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.COLLECTION_TEXT' | translate }}<br>
+          - {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.FULL_NAME' | translate }}<br>
+          - {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.EMAIL' | translate }}<br>
+          - {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.VEHICLE_INFO' | translate }}<br>
+          - {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.LOCATION' | translate }}<br>
+          - {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.PAYMENT_INFO' | translate }}<br><br>
+
+          <strong>{{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.USE_TITLE' | translate }}</strong><br>
+          {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.USE_TEXT' | translate }}<br>
+          - {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.MANAGE_ACCOUNT' | translate }}<br>
+          - {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.NOTIFICATIONS' | translate }}<br>
+          - {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.IMPROVE_EXPERIENCE' | translate }}<br><br>
+
+          <strong>{{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.SHARING_TITLE' | translate }}</strong><br>
+          {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.SHARING_TEXT' | translate }}<br><br>
+
+          <strong>{{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.SECURITY_TITLE' | translate }}</strong><br>
+          {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.SECURITY_TEXT' | translate }}<br><br>
+
+          <strong>{{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.RIGHTS_TITLE' | translate }}</strong><br>
+          {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.RIGHTS_TEXT' | translate }}<br><br>
+
+          <strong>{{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.CHANGES_TITLE' | translate }}</strong><br>
+          {{ 'OWNER_CONFIGURATION.PRIVACY_POLICY.CONTENT.CHANGES_TEXT' | translate }}<br>
+        </span>
+      </p>
+      <button mat-button color="primary" (click)="toggleShowMore()">
+        {{ showMore ? ('SHOW_LESS' | translate) : ('SHOW_MORE' | translate) }}
+      </button>
+    </mat-card>
+
+    <mat-card class="owner-configuration-card">
+      <h2>{{ 'OWNER_CONFIGURATION.LANGUAGE.TITLE' | translate }}</h2>
+      <mat-select [(ngModel)]="selectedLanguage" (selectionChange)="changeLanguage($event.value)">
+        <mat-option value="es">{{ 'OWNER_CONFIGURATION.LANGUAGE.SPANISH' | translate }}</mat-option>
+        <mat-option value="en">{{ 'OWNER_CONFIGURATION.LANGUAGE.ENGLISH' | translate }}</mat-option>
+      </mat-select>
+    </mat-card>
+  </div>
+
+  <div class="owner-configuration-row">
+    <mat-card class="owner-configuration-card">
+      <h2>{{ 'OWNER_CONFIGURATION.THEFT_REPORT.TITLE' | translate }}</h2>
+      <mat-form-field>
+        <mat-label>{{ 'OWNER_CONFIGURATION.THEFT_REPORT.DESCRIPTION' | translate }}</mat-label>
+        <textarea matInput [(ngModel)]="theftDescription"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="reportTheft()">
+        {{ 'OWNER_CONFIGURATION.THEFT_REPORT.SUBMIT' | translate }}
+      </button>
+    </mat-card>
+  </div>
+
+  <div class="owner-configuration-row">
+    <mat-card class="owner-configuration-card full-width">
+      <h2>{{ 'OWNER_CONFIGURATION.DELETE_ACCOUNT.TITLE' | translate }}</h2>
+      <p>{{ 'OWNER_CONFIGURATION.DELETE_ACCOUNT.CONFIRMATION' | translate }}</p>
+      <button mat-raised-button color="warn" (click)="deleteAccount()">
+        {{ 'OWNER_CONFIGURATION.DELETE_ACCOUNT.DELETE_BUTTON' | translate }}
+      </button>
+    </mat-card>
+    <button mat-raised-button color="accent" class="back-button" routerLink="/dashboard-owner" style="position: absolute; top: 16px; right: 16px;">
+      {{ 'BACK_TO_HOME' | translate }}
+    </button>
+  </div>
+</div>

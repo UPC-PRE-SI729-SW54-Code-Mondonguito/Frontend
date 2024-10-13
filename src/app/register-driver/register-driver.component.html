@@ -1,0 +1,61 @@
+<div class="register-driver-container">
+  <mat-card class="register-driver-card">
+    <h1 class="title">{{ 'REGISTER_DRIVER.TITLE' | translate }}</h1>
+    <p class="subtitle">{{ 'REGISTER_DRIVER.SUBTITLE' | translate }}</p>
+
+    <form [formGroup]="registerDriverForm" (ngSubmit)="onSubmit()">
+      <!-- Nombre -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_DRIVER.FIRST_NAME' | translate }}</mat-label>
+        <input matInput formControlName="firstName" placeholder="{{ 'REGISTER_DRIVER.FIRST_NAME_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="registerDriverForm.get('firstName')?.hasError('required')">{{ 'REGISTER_DRIVER.FIRST_NAME_ERROR' | translate }}</mat-error>
+      </mat-form-field>
+
+      <!-- Apellidos -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_DRIVER.LAST_NAME' | translate }}</mat-label>
+        <input matInput formControlName="lastName" placeholder="{{ 'REGISTER_DRIVER.LAST_NAME_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="registerDriverForm.get('lastName')?.hasError('required')">{{ 'REGISTER_DRIVER.LAST_NAME_ERROR' | translate }}</mat-error>
+      </mat-form-field>
+
+      <!-- Correo Electrónico -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_DRIVER.EMAIL' | translate }}</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="{{ 'REGISTER_DRIVER.EMAIL_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="registerDriverForm.get('email')?.hasError('required')">{{ 'REGISTER_DRIVER.EMAIL_ERROR' | translate }}</mat-error>
+        <mat-error *ngIf="registerDriverForm.get('email')?.hasError('email')">{{ 'REGISTER_DRIVER.EMAIL_INVALID_ERROR' | translate }}</mat-error>
+      </mat-form-field>
+
+      <!-- Contraseña -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_DRIVER.PASSWORD' | translate }}</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="{{ 'REGISTER_DRIVER.PASSWORD_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="registerDriverForm.get('password')?.hasError('required')">{{ 'REGISTER_DRIVER.PASSWORD_ERROR' | translate }}</mat-error>
+      </mat-form-field>
+
+      <!-- Repetir Contraseña -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_DRIVER.CONFIRM_PASSWORD' | translate }}</mat-label>
+        <input matInput formControlName="confirmPassword" type="password" placeholder="{{ 'REGISTER_DRIVER.CONFIRM_PASSWORD_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="registerDriverForm.get('confirmPassword')?.hasError('required')">{{ 'REGISTER_DRIVER.CONFIRM_PASSWORD_ERROR' | translate }}</mat-error>
+      </mat-form-field>
+
+      <!-- Placa de Vehículo -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_DRIVER.VEHICLE_PLATE' | translate }}</mat-label>
+        <input matInput formControlName="vehiclePlate" placeholder="{{ 'REGISTER_DRIVER.VEHICLE_PLATE_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="registerDriverForm.get('vehiclePlate')?.hasError('required')">{{ 'REGISTER_DRIVER.VEHICLE_PLATE_ERROR' | translate }}</mat-error>
+      </mat-form-field>
+
+      <!-- DNI -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_DRIVER.DNI' | translate }}</mat-label>
+        <input matInput formControlName="dni" placeholder="{{ 'REGISTER_DRIVER.DNI_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="registerDriverForm.get('dni')?.hasError('required')">{{ 'REGISTER_DRIVER.DNI_ERROR' | translate }}</mat-error>
+      </mat-form-field>
+
+      <!-- Botón de Registro -->
+      <button mat-raised-button color="primary" type="submit" class="full-width">{{ 'REGISTER_DRIVER.SUBMIT_BUTTON' | translate }}</button>
+    </form>
+  </mat-card>
+</div>
