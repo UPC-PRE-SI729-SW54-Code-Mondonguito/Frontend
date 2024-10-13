@@ -16,7 +16,7 @@
 
     <mat-card class="settings-card">
       <h2>{{ 'SETTINGS.LANGUAGE.TITLE' | translate }}</h2>
-      <mat-select [(value)]="selectedLanguage">
+      <mat-select [(ngModel)]="selectedLanguage" (selectionChange)="changeLanguage($event.value)">
         <mat-option value="es">{{ 'SETTINGS.LANGUAGE.SPANISH' | translate }}</mat-option>
         <mat-option value="en">{{ 'SETTINGS.LANGUAGE.ENGLISH' | translate }}</mat-option>
       </mat-select>
@@ -60,8 +60,9 @@
       <button mat-raised-button color="warn" (click)="deleteAccount()">{{ 'SETTINGS.DELETE_ACCOUNT.DELETE_BUTTON' | translate }}</button>
     </mat-card>
 
+    <!-- Este es el botón corregido con la clave del i18n -->
     <button mat-raised-button color="accent" class="back-button" routerLink="/dashboard-driver" style="position: absolute; top: 16px; right: 16px;">
-      {{ 'BACK_TO_HOME' | translate }}
+      {{ 'SETTINGS.BACK_TO_HOME' | translate }}
     </button>
   </div>
 </div>

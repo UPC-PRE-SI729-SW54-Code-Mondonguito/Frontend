@@ -239,14 +239,15 @@
     "TABLE_HEADERS": {
       "PLATE": "Plate",
       "MODEL": "Model",
-      "OWNER": "Owner",
-      "SECURITY_ALERT": "Security Alert",
-      "SYSTEM_FAILURE": "System Failure"
+      "OWNER": "Owner"
     },
     "ALERTS": {
       "TITLE": "Latest Registered Alerts",
       "DATE": "Date",
-      "TYPE": "Type",
+      "TYPE": {
+        "SECURITY_ALERT": "Security Alert",
+        "SYSTEM_FAILURE": "System Failure"
+      },
       "DESCRIPTION": "Description"
     },
     "BACK_TO_HOME": "Back to Home"

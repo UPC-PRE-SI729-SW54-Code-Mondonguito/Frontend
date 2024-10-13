@@ -239,17 +239,18 @@
     "TABLE_HEADERS": {
       "PLATE": "Matrícula",
       "MODEL": "Modelo",
-      "OWNER": "Propietario",
-      "SECURITY_ALERT": "Alerta de Seguridad",
-      "SYSTEM_FAILURE": "Fallo de Sistema"
+      "OWNER": "Propietario"
     },
     "ALERTS": {
       "TITLE": "Últimas Alertas Registradas",
       "DATE": "Fecha",
-      "TYPE": "Tipo",
+      "TYPE": {
+        "SECURITY_ALERT": "Alerta de Seguridad",
+        "SYSTEM_FAILURE": "Fallo de Sistema"
+      },
       "DESCRIPTION": "Descripción"
     },
-    "BACK_TO_HOME": "Ir al Inicio"
+    "BACK_TO_HOME": "Volver al Inicio"
   },     "OWNER_CONFIGURATION": {
   "PRIVACY_POLICY": {
     "TITLE": "Privacidad y Política",

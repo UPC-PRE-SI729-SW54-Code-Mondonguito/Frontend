@@ -44,8 +44,8 @@
         <mat-list-item *ngFor="let alert of alerts" class="alert-item">
           <mat-icon matListIcon>warning_amber</mat-icon>
           <div class="alert-content">
-            <h3 matLine class="alert-title">{{ alert.date | date: 'short' }} - {{ alert.type }}</h3>
-            <p matLine class="alert-description">{{ alert.description }}</p>
+            <h3 matLine class="alert-title">{{ alert.date | date: 'short' }} - {{ alert.type | translate }}</h3>
+            <p matLine class="alert-description">{{ alert.description | translate }}</p>
           </div>
         </mat-list-item>
       </mat-list>

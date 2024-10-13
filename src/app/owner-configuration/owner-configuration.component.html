@@ -36,7 +36,7 @@
         </span>
       </p>
       <button mat-button color="primary" (click)="toggleShowMore()">
-        {{ showMore ? ('SHOW_LESS' | translate) : ('SHOW_MORE' | translate) }}
+        {{ showMore ? ('OWNER_CONFIGURATION.SHOW_LESS' | translate) : ('OWNER_CONFIGURATION.SHOW_MORE' | translate) }}
       </button>
     </mat-card>
 
@@ -70,8 +70,9 @@
         {{ 'OWNER_CONFIGURATION.DELETE_ACCOUNT.DELETE_BUTTON' | translate }}
       </button>
     </mat-card>
+
     <button mat-raised-button color="accent" class="back-button" routerLink="/dashboard-owner" style="position: absolute; top: 16px; right: 16px;">
-      {{ 'BACK_TO_HOME' | translate }}
+      {{ 'OWNER_CONFIGURATION.BACK_TO_HOME' | translate }}
     </button>
   </div>
 </div>
