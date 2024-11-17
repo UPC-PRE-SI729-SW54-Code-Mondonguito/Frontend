@@ -1,0 +1,133 @@
+/* Contenedor principal */
+.register-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Opciones de registro */
+.register-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px; /* Espaciado más amplio entre las tarjetas */
+}
+
+.register-option {
+  max-width: 550px; /* Incrementa el ancho máximo */
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  padding: 30px; /* Aumenta el padding interno */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen */
+.register-image {
+  width: 100%;
+  max-width: 320px; /* Incrementa el tamaño máximo de las imágenes */
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h2 {
+  font-size: 32px; /* Título principal */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 26px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Botones */
+.register-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background: linear-gradient(135deg, #0056b3, #003f8a);
+  transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .register-options {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .register-option {
+    max-width: 90%; /* Ajusta las tarjetas en pantallas medianas */
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 10px;
+  }
+
+  .register-option {
+    max-width: 100%; /* Ocupan todo el ancho */
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .register-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

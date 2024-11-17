@@ -1,0 +1,318 @@
+{
+  "LOGIN": {
+    "TITLE": "Asegure su espacio desde la comodidad de su casa",
+    "NO_ACCOUNT": "¿No está registrado?",
+    "REGISTER_HERE": "Regístrese aquí",
+    "EMAIL": "Correo electrónico",
+    "EMAIL_PLACEHOLDER": "ejemplo@gmail.com",
+    "EMAIL_REQUIRED": "Se requiere insertar un correo",
+    "PASSWORD": "Contraseña",
+    "PASSWORD_PLACEHOLDER": "Ingrese su contraseña",
+    "REMEMBER_ME": "Mantener sesión",
+    "FORGOT_PASSWORD": "Recuperar contraseña",
+    "LOGIN_BUTTON": "Iniciar sesión"
+  },
+  "FORGOT_PASSWORD": {
+    "TITLE": "¿Olvidaste tu contraseña?",
+    "SUBTITLE": "No te preocupes, solo ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.",
+    "EMAIL": "Correo electrónico",
+    "EMAIL_PLACEHOLDER": "ejemplo@correo.com",
+    "INVALID_EMAIL": "Correo inválido",
+    "SUBMIT": "Enviar enlace de restablecimiento",
+    "BACK_TO_LOGIN": "¿Ya recuerdas tu contraseña? Inicia sesión aquí",
+    "REQUIRED_FIELD": "Campo Requerido"
+  },
+  "REGISTER": {
+    "TITLE": "Registro de Usuarios",
+    "DRIVER": "Conductor",
+    "DRIVER_DESCRIPTION": "Regístrese como conductor para tener acceso a la información de todos los estacionamientos disponibles en la ciudad, además de promociones y notificaciones sobre espacios cercanos.",
+    "DRIVER_BUTTON": "Registrarse como Conductor",
+    "OWNER": "Dueño de Playa de Estacionamiento",
+    "OWNER_DESCRIPTION": "Regístrese como dueño de playa para gestionar sus espacios de estacionamiento, recibir pagos de manera rápida y segura, y facilitar el acceso a sus clientes mediante la aplicación.",
+    "OWNER_BUTTON": "Registrarse como Dueño de Playa"
+  },
+  "PAYMENT": {
+    "CARD_HOLDER": "Nombre del titular",
+    "CARD_NUMBER": "Número de tarjeta",
+    "EXPIRY_CVV": "Fecha de expiración / CVV",
+    "PLACEHOLDER_CARD_HOLDER": "Ingresa tu nombre completo",
+    "PLACEHOLDER_CARD_NUMBER": "0000 0000 0000 0000",
+    "PLACEHOLDER_EXPIRY": "MM/AA",
+    "PLACEHOLDER_CVV": "CVV",
+    "PRICE": "Precio en Soles",
+    "TRANSACTION_BUTTON": "Completar Transacción",
+    "OR_PAY_WITH": "o pagar usando billetera electrónica",
+    "TRANSACTION_COMPLETE": "Transacción completa",
+    "COMPLETE_FORM": "Por favor complete el formulario antes de enviar"
+  },
+  "DASHBOARD": {
+    "WELCOME": "Bienvenido",
+    "FAVORITE_PLACES": "¡Reserva en tus lugares favoritos!",
+    "FAVORITE_PLACES_DESC": "Lugares marcados como favoritos",
+    "WEEKLY_OFFERS": "Ofertas Semanales",
+    "WEEKLY_OFFERS_DESC": "Ofertas semanales disponibles",
+    "RESERVE_NOW": "¡Reserva algo ya!"
+  },
+  "SIDEBAR": {
+    "HOME": "Inicio",
+    "RESERVATIONS": "Reservas",
+    "SUPPORT": "Soporte",
+    "TRACKING_AND_ALARMS": "Seguimiento y alarmas",
+    "SETTINGS": "Configuración",
+    "NOTIFICATIONS": "Notificaciones",
+    "LOGOUT": "Cerrar sesión"
+  },
+  "REGISTER_DRIVER": {
+    "TITLE": "Regístrate como Conductor",
+    "SUBTITLE": "Asegura tu espacio desde la comodidad de tu casa.",
+    "FIRST_NAME": "Nombre",
+    "FIRST_NAME_PLACEHOLDER": "Ingresa tu nombre",
+    "FIRST_NAME_ERROR": "El nombre es obligatorio.",
+    "LAST_NAME": "Apellidos",
+    "LAST_NAME_PLACEHOLDER": "Ingresa tu apellido",
+    "LAST_NAME_ERROR": "El apellido es obligatorio.",
+    "EMAIL": "Correo electrónico",
+    "EMAIL_PLACEHOLDER": "Ingresa tu correo electrónico",
+    "EMAIL_ERROR": "El correo electrónico es obligatorio.",
+    "EMAIL_INVALID_ERROR": "El correo electrónico no es válido.",
+    "PASSWORD": "Contraseña",
+    "PASSWORD_PLACEHOLDER": "6 dígitos con una mayúscula",
+    "PASSWORD_ERROR": "La contraseña es obligatoria.",
+    "CONFIRM_PASSWORD": "Repetir Contraseña",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "Repite tu contraseña",
+    "CONFIRM_PASSWORD_ERROR": "Repetir la contraseña es obligatorio.",
+    "VEHICLE_PLATE": "Placa del Vehículo",
+    "VEHICLE_PLATE_PLACEHOLDER": "Ingresa la placa del vehículo",
+    "VEHICLE_PLATE_ERROR": "La placa del vehículo es obligatoria.",
+    "DNI": "DNI",
+    "DNI_PLACEHOLDER": "Ingresa tu DNI",
+    "DNI_ERROR": "El DNI es obligatorio.",
+    "SUBMIT_BUTTON": "Registrarse"
+  },
+  "REGISTER_OWNER": {
+    "TITLE": "Regístrate como Dueño de Playa",
+    "SUBTITLE": "Asegura tu espacio desde la comodidad de tu casa.",
+    "FULL_NAME": "Nombre Completo",
+    "FULL_NAME_PLACEHOLDER": "Ingresa tu nombre completo",
+    "FULL_NAME_ERROR": "El nombre es obligatorio.",
+    "BUSINESS_NAME": "Nombre del Local",
+    "BUSINESS_NAME_PLACEHOLDER": "Ingresa el nombre de tu local",
+    "BUSINESS_NAME_ERROR": "El nombre del local es obligatorio.",
+    "EMAIL": "Correo electrónico",
+    "EMAIL_PLACEHOLDER": "Ingresa tu correo electrónico",
+    "EMAIL_ERROR": "El correo electrónico es obligatorio.",
+    "EMAIL_INVALID_ERROR": "El correo electrónico no es válido.",
+    "PASSWORD": "Contraseña",
+    "PASSWORD_PLACEHOLDER": "6 dígitos con una mayúscula",
+    "PASSWORD_ERROR": "La contraseña es obligatoria.",
+    "CONFIRM_PASSWORD": "Repetir Contraseña",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "Repite tu contraseña",
+    "CONFIRM_PASSWORD_ERROR": "Repetir la contraseña es obligatorio.",
+    "RUC": "RUC",
+    "RUC_PLACEHOLDER": "Ingresa tu RUC",
+    "RUC_ERROR": "El RUC es obligatorio.",
+    "ADDRESS": "Dirección del Local",
+    "ADDRESS_PLACEHOLDER": "Ingresa la dirección de tu local",
+    "ADDRESS_ERROR": "La dirección es obligatoria.",
+    "SUBMIT_BUTTON": "Registrarse"
+  },
+  "RESERVATIONS": {
+    "TITLE": "Gestionar Reservaciones de Estacionamiento",
+    "VEHICLE_REGISTRATION_LABEL": "Matrícula del Vehículo",
+    "VEHICLE_REGISTRATION_PLACEHOLDER": "Ej. ABC-1234",
+    "VEHICLE_REGISTRATION_REQUIRED": "La matrícula es requerida",
+    "VEHICLE_TYPE_LABEL": "Tipo de Vehículo",
+    "VEHICLE_TYPE_REQUIRED": "El tipo de vehículo es requerido",
+    "VEHICLE_TYPE_OPTIONS": {
+      "MOTORCYCLE": "Motocicleta",
+      "TRUCK": "Camión",
+      "CAR": "Coche"
+    },
+    "RESERVATION_TIME_LABEL": "Hora de la Reserva",
+    "RESERVATION_TIME_PLACEHOLDER": "dd/mm/aaaa --:--",
+    "RESERVATION_TIME_REQUIRED": "La hora es requerida",
+    "RESERVE_BUTTON": "Reservar",
+    "PAY_BUTTON": "Pagar",
+    "CURRENT_RESERVATIONS_TITLE": "Reservaciones Actuales",
+    "TABLE_HEADERS": {
+      "ID": "ID",
+      "VEHICLE_REGISTRATION": "Matrícula",
+      "VEHICLE_TYPE": "Tipo",
+      "RESERVATION_TIME": "Hora",
+      "ACTIONS": "Acción"
+    }
+  },
+  "SUPPORT": {
+    "TITLE": "Soporte",
+    "BACK_TO_HOME": "Volver al Inicio",
+    "VIRTUAL_ASSISTANCE_TITLE": "Asistencia Virtual",
+    "VIRTUAL_ASSISTANCE_DESCRIPTION": "Asistencia virtual desde la página para resolver tus dudas. Estamos aquí para ayudarte.",
+    "INPUT_LABEL": "Escribe tu duda aquí",
+    "SEND_BUTTON": "Enviar Pregunta",
+    "CONTACT_US_TITLE": "Contáctanos",
+    "CONTACT_US_DESCRIPTION": "Canales de contacto a servicio al cliente disponibles las 24 horas. ¡Estamos para escucharte!"
+  },
+  "VEHICLE_TRACKING": {
+    "TITLE": "Seguimiento y Alarmas de Vehículos",
+    "WELCOME": "Bienvenido...",
+    "REGISTERED_CARS": "Automóviles Registrados",
+    "REGISTERED_CARS_SUBTEXT": "(Automóviles con sensor)",
+    "LATEST_ALERTS": "Últimas Alertas Registradas",
+    "LATEST_ALERTS_SUBTEXT": "Historial de alertas",
+    "SENSOR_TITLE": "Mantén tu coche seguro con...",
+    "SENSOR_DESCRIPTION": "Explicación del sensor y su funcionamiento.",
+    "BACK_TO_HOME": "Volver al Inicio"
+  },
+  "SETTINGS": {
+    "PRIVACY_POLICY": {
+      "TITLE": "Privacidad y Política",
+      "DESCRIPTION": "Esta es una descripción resumida de la política de privacidad...",
+      "CONTENT": "Política de Privacidad - ParkingNow<br><br>En ParkingNow, nos comprometemos a proteger la privacidad y seguridad de los datos de nuestros usuarios. Esta política de privacidad describe cómo recopilamos, usamos y protegemos la información personal que nos proporcionas cuando utilizas nuestra plataforma.<br><br><strong>1. Recopilación de información</strong><br>Recopilamos la información personal que nos proporcionas al registrarte en nuestra plataforma, realizar reservas de estacionamiento o al ponerte en contacto con nosotros. Esto incluye:<br>- Nombre completo<br>- Dirección de correo electrónico<br>- Información del vehículo (como la matrícula)<br>- Ubicación geográfica (para ofrecerte opciones de estacionamiento cercanas)<br>- Información de pago, en caso de realizar transacciones en la plataforma.<br><br><strong>2. Uso de la información</strong><br>Utilizamos tu información personal para:<br>- Gestionar tu cuenta y procesar tus solicitudes de reserva<br>- Enviarte notificaciones y actualizaciones sobre el estado de tu reserva<br>- Mejorar la experiencia del usuario en la plataforma.<br><br><strong>3. Compartir información</strong><br>No compartimos tu información personal con terceros sin tu consentimiento, a menos que sea necesario para cumplir con requisitos legales o procesar tus solicitudes de reserva.<br><br><strong>4. Seguridad de la información</strong><br>Implementamos medidas de seguridad adecuadas para proteger tu información personal contra accesos no autorizados o alteraciones. Sin embargo, ningún sistema de seguridad es infalible, y no podemos garantizar la seguridad absoluta de los datos.<br><br><strong>5. Tus derechos</strong><br>Puedes acceder, modificar o eliminar tu información personal en cualquier momento a través de la configuración de tu cuenta o contactándonos directamente.<br><br><strong>6. Cambios en esta política</strong><br>Nos reservamos el derecho a actualizar esta política de privacidad en cualquier momento. Te notificaremos de cualquier cambio significativo a través de nuestra plataforma o por correo electrónico."
+    },
+    "LANGUAGE": {
+      "TITLE": "Idioma",
+      "ENGLISH": "Inglés",
+      "SPANISH": "Español"
+    },
+    "REFUND": {
+      "TITLE": "Pedir reembolso",
+      "NAME": "Nombre",
+      "EMAIL": "Correo Electrónico",
+      "REASON": "Motivo del reembolso",
+      "SUBMIT": "Enviar"
+    },
+    "THEFT_REPORT": {
+      "TITLE": "Registrar robo de carro",
+      "DESCRIPTION": "Descripción del robo",
+      "SUBMIT": "Enviar"
+    },
+    "DELETE_ACCOUNT": {
+      "TITLE": "Eliminar cuenta",
+      "CONFIRMATION": "¿Está seguro de que desea eliminar su cuenta? Esta acción no se puede deshacer.",
+      "DELETE_BUTTON": "Eliminar cuenta"
+    },
+    "SHOW_MORE": "Ver más",
+    "SHOW_LESS": "Ver menos",
+    "BACK_TO_HOME": "Volver al inicio"
+  },
+  "NOTIFICATIONS": {
+    "TITLE": "Notificaciones",
+    "BACK_TO_HOME": "Volver al inicio",
+    "RECEIPTS": "Recibos",
+    "RECEIPT_LIST": {
+      "RECIBO_001": "Recibo #001 - Estacionamiento Lima Centro",
+      "RECIBO_002": "Recibo #002 - Estacionamiento Plaza Norte",
+      "RECIBO_003": "Recibo #003 - Estacionamiento Miraflores"
+    },
+    "FAVORITE_PLACES": "Lugares disponibles en sus lugares favoritos",
+    "FAVORITE_PLACES_LIST": {
+      "LUGAR_001": "Lima Centro - Cerca de la playa",
+      "LUGAR_002": "Miraflores - Parque Kennedy",
+      "LUGAR_003": "Barranco - Estacionamiento Central"
+    }
+  },
+  "LOCAL_RECORDS": {
+    "TITLE": "Registro de Locales",
+    "WELCOME": "Bienvenido",
+    "MANAGE_RECORDS": "Gestiona tus locales y estadísticas fácilmente.",
+    "RECORDS": "Locales registrados y su calificación.",
+    "STATISTICS": "Estadísticas",
+    "STATISTICS_DESC": "Estadísticas de reservas pasadas, usuarios, tiempo de reservas.",
+    "BACK_TO_HOME": "Inicio"
+  },
+  "DASHBOARD_OWNER": {
+    "WELCOME": "Bienvenido",
+    "MANAGE_LOCALS": "Gestiona tus locales y estadísticas fácilmente.",
+    "TODAY_RESERVATIONS": "Reservas para hoy",
+    "SCHEDULED_RESERVATIONS": "Reservas programadas",
+    "SPACES": "Espacios",
+    "SPACES_DESC": "Lista de espacios separados por: Lleno, reservado, vacío"
+  },
+  "OWNER_RESERVATIONS": {
+    "TITLE": "Reservas Programadas",
+    "DESCRIPTION": "Filtra y gestiona las reservas del estacionamiento",
+    "FILTER": {
+      "RESERVATION_ID": "ID de Reserva",
+      "RESERVATION_DATE": "Fecha de Reserva",
+      "USER": "Usuario",
+      "APPLY_FILTER": "Aplicar Filtro"
+    },
+    "RESERVATIONS_LIST": "Lista de Reservas",
+    "TABLE_HEADERS": {
+      "ID": "ID",
+      "USER": "Usuario",
+      "DATE": "Fecha",
+      "ACTION": "Acción"
+    },
+    "CANCEL": "Cancelar",
+    "BACK_TO_HOME": "Volver al Inicio"
+  },
+  "OWNER_SECURITY": {
+    "TITLE": "Monitoreo de Seguridad",
+    "DESCRIPTION": "Visualiza los vehículos registrados y las alertas de seguridad más recientes",
+    "REGISTERED_VEHICLES": "Automóviles Registrados en los Locales",
+    "TABLE_HEADERS": {
+      "PLATE": "Matrícula",
+      "MODEL": "Modelo",
+      "OWNER": "Propietario"
+    },
+    "ALERTS": {
+      "TITLE": "Últimas Alertas Registradas",
+      "DATE": "Fecha",
+      "TYPE": {
+        "SECURITY_ALERT": "Alerta de Seguridad",
+        "SYSTEM_FAILURE": "Fallo de Sistema"
+      },
+      "DESCRIPTION": "Descripción"
+    },
+    "BACK_TO_HOME": "Volver al Inicio"
+  },     "OWNER_CONFIGURATION": {
+  "PRIVACY_POLICY": {
+    "TITLE": "Privacidad y Política",
+    "DESCRIPTION": "Esta es una descripción resumida de la política de privacidad...",
+    "CONTENT": {
+      "TITLE": "Política de Privacidad - ParkingNow",
+      "TEXT": "En ParkingNow, nos comprometemos a proteger la privacidad y seguridad de los datos de nuestros usuarios. Esta política de privacidad describe cómo recopilamos, usamos y protegemos la información personal que nos proporcionas cuando utilizas nuestra plataforma.",
+      "COLLECTION_TITLE": "1. Recopilación de información",
+      "COLLECTION_TEXT": "Recopilamos la información personal que nos proporcionas al registrarte en nuestra plataforma, realizar reservas de estacionamiento o al ponerte en contacto con nosotros. Esto incluye:",
+      "FULL_NAME": "- Nombre completo",
+      "EMAIL": "- Dirección de correo electrónico",
+      "VEHICLE_INFO": "- Información del vehículo (como la matrícula)",
+      "LOCATION": "- Ubicación geográfica (para ofrecerte opciones de estacionamiento cercanas)",
+      "PAYMENT_INFO": "- Información de pago, en caso de realizar transacciones en la plataforma.",
+      "USE_TITLE": "2. Uso de la información",
+      "USE_TEXT": "Utilizamos tu información personal para:",
+      "MANAGE_ACCOUNT": "- Gestionar tu cuenta y procesar tus solicitudes de reserva",
+      "NOTIFICATIONS": "- Enviarte notificaciones y actualizaciones sobre el estado de tu reserva",
+      "IMPROVE_EXPERIENCE": "- Mejorar la experiencia del usuario en la plataforma.",
+      "SHARING_TITLE": "3. Compartir información",
+      "SHARING_TEXT": "No compartimos tu información personal con terceros sin tu consentimiento, a menos que sea necesario para cumplir con requisitos legales o procesar tus solicitudes de reserva.",
+      "SECURITY_TITLE": "4. Seguridad de la información",
+      "SECURITY_TEXT": "Implementamos medidas de seguridad adecuadas para proteger tu información personal contra accesos no autorizados o alteraciones. Sin embargo, ningún sistema de seguridad es infalible, y no podemos garantizar la seguridad absoluta de los datos.",
+      "RIGHTS_TITLE": "5. Tus derechos",
+      "RIGHTS_TEXT": "Puedes acceder, modificar o eliminar tu información personal en cualquier momento a través de la configuración de tu cuenta o contactándonos directamente.",
+      "CHANGES_TITLE": "6. Cambios en esta política",
+      "CHANGES_TEXT": "Nos reservamos el derecho a actualizar esta política de privacidad en cualquier momento. Te notificaremos de cualquier cambio significativo a través de nuestra plataforma o por correo electrónico."
+    }
+  },
+  "LANGUAGE": {
+    "TITLE": "Idioma",
+    "SPANISH": "Español",
+    "ENGLISH": "Inglés"
+  },
+  "THEFT_REPORT": {
+    "TITLE": "Registrar robo de carro",
+    "DESCRIPTION": "Descripción del robo",
+    "SUBMIT": "Enviar"
+  },
+  "DELETE_ACCOUNT": {
+    "TITLE": "Eliminar cuenta",
+    "CONFIRMATION": "¿Está seguro de que desea eliminar su cuenta? Esta acción no se puede deshacer.",
+    "DELETE_BUTTON": "Eliminar cuenta"
+  },
+  "SHOW_MORE": "Ver más",
+  "SHOW_LESS": "Ver menos",
+  "BACK_TO_HOME": "Volver al Inicio"
+}
+}
+
