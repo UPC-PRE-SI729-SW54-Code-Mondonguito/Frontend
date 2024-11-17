@@ -8,7 +8,8 @@
       <button mat-button routerLink="/vehicle-tracking" class="menu-item">{{ 'SIDEBAR.TRACKING_AND_ALARMS' | translate }}</button>
       <button mat-button routerLink="/settings" class="menu-item">{{ 'SIDEBAR.SETTINGS' | translate }}</button>
       <button mat-button routerLink="/notifications" class="menu-item">{{ 'SIDEBAR.NOTIFICATIONS' | translate }}</button>
-      <button mat-button routerLink="/login" class="menu-item">{{ 'SIDEBAR.LOGOUT' | translate }}</button>
+      <!-- Cerrar sesión con lógica para redirigir al login -->
+      <button mat-button class="menu-item" (click)="logout()">{{ 'SIDEBAR.LOGOUT' | translate }}</button>
     </nav>
   </aside>
 

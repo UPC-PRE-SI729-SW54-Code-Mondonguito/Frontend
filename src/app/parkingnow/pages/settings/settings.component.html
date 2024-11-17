@@ -1,0 +1,68 @@
+<div class="settings-container">
+  <div class="settings-row">
+    <mat-card class="settings-card">
+      <h2>{{ 'SETTINGS.PRIVACY_POLICY.TITLE' | translate }}</h2>
+      <p>
+        {{ 'SETTINGS.PRIVACY_POLICY.DESCRIPTION' | translate }}
+        <span *ngIf="showMore">
+          <strong>{{ 'SETTINGS.PRIVACY_POLICY.TITLE' | translate }} - ParkingNow</strong><br><br>
+          <span [innerHTML]="'SETTINGS.PRIVACY_POLICY.CONTENT' | translate"></span>
+        </span>
+      </p>
+      <button mat-button color="primary" (click)="toggleShowMore()">
+        {{ showMore ? ('SETTINGS.SHOW_LESS' | translate) : ('SETTINGS.SHOW_MORE' | translate) }}
+      </button>
+    </mat-card>
+
+    <mat-card class="settings-card">
+      <h2>{{ 'SETTINGS.LANGUAGE.TITLE' | translate }}</h2>
+      <mat-select [(ngModel)]="selectedLanguage" (selectionChange)="changeLanguage($event.value)">
+        <mat-option value="es">{{ 'SETTINGS.LANGUAGE.SPANISH' | translate }}</mat-option>
+        <mat-option value="en">{{ 'SETTINGS.LANGUAGE.ENGLISH' | translate }}</mat-option>
+      </mat-select>
+    </mat-card>
+  </div>
+
+  <div class="settings-row">
+    <mat-card class="settings-card">
+      <h2>{{ 'SETTINGS.REFUND.TITLE' | translate }}</h2>
+      <form [formGroup]="refundForm" (ngSubmit)="submitRefund()">
+        <mat-form-field>
+          <mat-label>{{ 'SETTINGS.REFUND.NAME' | translate }}</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>{{ 'SETTINGS.REFUND.EMAIL' | translate }}</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>{{ 'SETTINGS.REFUND.REASON' | translate }}</mat-label>
+          <textarea matInput formControlName="reason"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">{{ 'SETTINGS.REFUND.SUBMIT' | translate }}</button>
+      </form>
+    </mat-card>
+
+    <mat-card class="settings-card">
+      <h2>{{ 'SETTINGS.THEFT_REPORT.TITLE' | translate }}</h2>
+      <mat-form-field>
+        <mat-label>{{ 'SETTINGS.THEFT_REPORT.DESCRIPTION' | translate }}</mat-label>
+        <textarea matInput [(ngModel)]="theftDescription"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="reportTheft()">{{ 'SETTINGS.THEFT_REPORT.SUBMIT' | translate }}</button>
+    </mat-card>
+  </div>
+
+  <div class="settings-row">
+    <mat-card class="settings-card full-width">
+      <h2>{{ 'SETTINGS.DELETE_ACCOUNT.TITLE' | translate }}</h2>
+      <p>{{ 'SETTINGS.DELETE_ACCOUNT.CONFIRMATION' | translate }}</p>
+      <button mat-raised-button color="warn" (click)="deleteAccount()">{{ 'SETTINGS.DELETE_ACCOUNT.DELETE_BUTTON' | translate }}</button>
+    </mat-card>
+
+    <!-- Este es el botón corregido con la clave del i18n -->
+    <button mat-raised-button color="accent" class="back-button" routerLink="/dashboard-driver" style="position: absolute; top: 16px; right: 16px;">
+      {{ 'SETTINGS.BACK_TO_HOME' | translate }}
+    </button>
+  </div>
+</div>

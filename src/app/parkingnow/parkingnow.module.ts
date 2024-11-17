@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';  // Añadido FormsModule
 
 // Angular Material Modules
 import { MatCardModule } from '@angular/material/card';
@@ -11,8 +11,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatSelectModule } from '@angular/material/select'; // Asegúrate de importar MatSelectModule
-import { MatOptionModule } from '@angular/material/core'; // Asegúrate de importar MatOptionModule
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material/toolbar';  // Importa MatToolbarModule
 
 // ngx-translate
 import { TranslateModule } from '@ngx-translate/core';
@@ -23,6 +24,10 @@ import { RegisterOwnerComponent } from './pages/register-owner/register-owner.co
 import { DashboardDriverComponent } from './pages/dashboard-driver/dashboard-driver.component';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
 import { PaymentModalComponent } from './pages/payment-modal/payment-modal.component';
+import { SupportComponent } from './pages/support/support.component';
+import { VehicleTrackingComponent } from './pages/vehicle-tracking/vehicle-tracking.component';  // Añadido el componente de vehicle-tracking
+import { NotificationsComponent } from './pages/notifications/notifications.component';  // Añadido el componente Notifications
+import { SettingsComponent } from './pages/settings/settings.component';  // Importar el componente Settings
 
 // Rutas específicas del módulo ParkingNow
 import { RouterModule, Routes } from '@angular/router';
@@ -31,7 +36,11 @@ const routes: Routes = [
   { path: 'register-driver', component: RegisterDriverComponent },
   { path: 'register-owner', component: RegisterOwnerComponent },
   { path: 'dashboard-driver', component: DashboardDriverComponent },
-  { path: 'reservations', component: ReservationsComponent } // Ruta para ReservationsComponent
+  { path: 'reservations', component: ReservationsComponent },
+  { path: 'support', component: SupportComponent },
+  { path: 'vehicle-tracking', component: VehicleTrackingComponent },
+  { path: 'notifications', component: NotificationsComponent },  // Ruta añadida para NotificationsComponent
+  { path: 'settings', component: SettingsComponent }  // Añadir ruta para SettingsComponent
 ];
 
 @NgModule({
@@ -39,13 +48,18 @@ const routes: Routes = [
     RegisterDriverComponent,
     RegisterOwnerComponent,
     DashboardDriverComponent,
-    ReservationsComponent, // Declara ReservationsComponent
-    PaymentModalComponent // Declara PaymentModalComponent
+    ReservationsComponent,
+    PaymentModalComponent,
+    SupportComponent,
+    VehicleTrackingComponent,
+    NotificationsComponent,  // Declarado el componente aquí
+    SettingsComponent  // Declarar el componente SettingsComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    TranslateModule, // Para soporte de traducciones
+    FormsModule,  // Asegúrate de importar FormsModule aquí para usar ngModel
+    TranslateModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
@@ -53,16 +67,17 @@ const routes: Routes = [
     MatCheckboxModule,
     MatTableModule,
     MatIconModule,
-    MatDialogModule, // Módulo para el modal de Angular Material
-    MatSelectModule, // Asegúrate de incluir MatSelectModule
-    MatOptionModule, // Asegúrate de incluir MatOptionModule
-    RouterModule.forChild(routes) // Agregar enrutamiento específico del módulo
+    MatDialogModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatToolbarModule,  // Asegúrate de incluir MatToolbarModule aquí
+    RouterModule.forChild(routes)
   ],
   exports: [
     RegisterDriverComponent,
     RegisterOwnerComponent,
     DashboardDriverComponent,
-    ReservationsComponent, // Exporta ReservationsComponent si es necesario
+    ReservationsComponent
   ]
 })
 export class ParkingNowModule {}

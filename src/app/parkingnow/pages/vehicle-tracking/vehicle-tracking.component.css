@@ -1,0 +1,88 @@
+.vehicle-tracking-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px; /* Añadir un espacio entre los elementos */
+}
+
+.left-section {
+  flex: 2;
+}
+
+.right-section {
+  flex: 1;
+}
+
+mat-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px; /* Redondear las esquinas */
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Franjas negras alrededor de las tarjetas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
+  background-color: #f1f8e9;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+mat-card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra más intensa en hover */
+  transform: translateY(-3px); /* Leve movimiento hacia arriba */
+}
+
+mat-toolbar {
+  background-color: #004d40; /* Verde oscuro */
+  color: white;
+}
+
+.profile-icon {
+  display: none; /* Mantener oculto el ícono de perfil */
+}
+
+h1, h2 {
+  font-size: 1.8rem; /* Reducir el tamaño del título */
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+  font-size: 1rem; /* Tamaño de texto más pequeño */
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .right-section {
+    margin-left: 0;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem; /* Reducir aún más el tamaño de los títulos en móviles */
+  }
+
+  p {
+    font-size: 0.9rem; /* Reducir el tamaño del texto en móviles */
+  }
+
+  mat-card {
+    padding: 15px; /* Reducir el padding en móviles */
+  }
+
+  mat-toolbar {
+    font-size: 0.9rem; /* Reducir tamaño de fuente en el toolbar */
+  }
+}

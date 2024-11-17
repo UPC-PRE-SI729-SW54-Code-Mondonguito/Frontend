@@ -1,0 +1,44 @@
+<div class="notifications-header">
+  <h1>{{ 'NOTIFICATIONS.TITLE' | translate }}</h1>
+  <button mat-raised-button color="accent" routerLink="/dashboard-driver" class="back-button">
+    <mat-icon>arrow_back</mat-icon>
+    {{ 'NOTIFICATIONS.BACK_TO_HOME' | translate }}
+  </button>
+  <button mat-raised-button color="primary" (click)="switchLanguage()">
+    {{ 'SETTINGS.LANGUAGE.SPANISH' | translate }} / {{ 'SETTINGS.LANGUAGE.ENGLISH' | translate }}
+  </button>
+</div>
+
+<div class="notifications-container">
+  <!-- Recibos -->
+  <div class="notification-section">
+    <h2>{{ 'NOTIFICATIONS.RECEIPTS' | translate }}</h2>
+    <ul class="recibos-list">
+      <li>• {{ 'NOTIFICATIONS.RECEIPT_LIST.RECIBO_001' | translate }}</li>
+      <li>• {{ 'NOTIFICATIONS.RECEIPT_LIST.RECIBO_002' | translate }}</li>
+      <li>• {{ 'NOTIFICATIONS.RECEIPT_LIST.RECIBO_003' | translate }}</li>
+    </ul>
+  </div>
+
+  <!-- Lugares favoritos -->
+  <div class="notification-section">
+    <h2>{{ 'NOTIFICATIONS.FAVORITE_PLACES' | translate }}</h2>
+    <ul class="lugares-favoritos-list">
+      <li>
+        <mat-checkbox [(ngModel)]="lugares[0].seleccionado" (change)="onFavoriteChange(0)">
+          {{ 'NOTIFICATIONS.FAVORITE_PLACES_LIST.LUGAR_001' | translate }}
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox [(ngModel)]="lugares[1].seleccionado" (change)="onFavoriteChange(1)">
+          {{ 'NOTIFICATIONS.FAVORITE_PLACES_LIST.LUGAR_002' | translate }}
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox [(ngModel)]="lugares[2].seleccionado" (change)="onFavoriteChange(2)">
+          {{ 'NOTIFICATIONS.FAVORITE_PLACES_LIST.LUGAR_003' | translate }}
+        </mat-checkbox>
+      </li>
+    </ul>
+  </div>
+</div>
