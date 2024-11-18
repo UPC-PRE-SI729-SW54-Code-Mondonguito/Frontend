@@ -227,7 +227,13 @@
     "TODAY_RESERVATIONS": "Reservations for today",
     "SCHEDULED_RESERVATIONS": "Scheduled reservations",
     "SPACES": "Spaces",
-    "SPACES_DESC": "List of spaces categorized by: Full, reserved, empty"
+    "SPACES_DESC": "List of spaces categorized by: Full, reserved, empty",
+    "HOME": "Home",
+    "LOCAL_RECORDS": "Local Records",
+    "RESERVATIONS": "Reservations",
+    "TRACKING_AND_ALARMS": "Tracking and Alarms",
+    "SETTINGS": "Settings",
+    "LOGOUT": "Logout"
   },
   "OWNER_RESERVATIONS": {
     "TITLE": "Scheduled Reservations",

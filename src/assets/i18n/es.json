@@ -226,7 +226,13 @@
     "TODAY_RESERVATIONS": "Reservas para hoy",
     "SCHEDULED_RESERVATIONS": "Reservas programadas",
     "SPACES": "Espacios",
-    "SPACES_DESC": "Lista de espacios separados por: Lleno, reservado, vacío"
+    "SPACES_DESC": "Lista de espacios separados por: Lleno, reservado, vacío",
+    "HOME": "Inicio",
+    "LOCAL_RECORDS": "Registros Locales",
+    "RESERVATIONS": "Reservas",
+    "TRACKING_AND_ALARMS": "Seguimiento y Alarmas",
+    "SETTINGS": "Configuraciones",
+    "LOGOUT": "Cerrar Sesión"
   },
   "OWNER_RESERVATIONS": {
     "TITLE": "Reservas Programadas",

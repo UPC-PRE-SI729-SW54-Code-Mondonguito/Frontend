@@ -1,0 +1,34 @@
+<aside class="sidebar">
+  <img src="../../../../assets/images/parkingnow.png" alt="ParkingNow Logo" class="logo">
+  <nav class="menu">
+    <!-- Ruta al Home del Dashboard Owner -->
+    <button mat-button routerLink="/dashboard-owner" class="menu-item">
+      {{ 'SIDEBAR.HOME' | translate }}
+    </button>
+
+    <!-- Ruta a Local Records -->
+    <button mat-button routerLink="/dashboard-owner/local-records" class="menu-item">
+      {{ 'SIDEBAR.LOCAL_RECORDS' | translate }}
+    </button>
+
+    <!-- Ruta a Owner Reservations -->
+    <button mat-button routerLink="/dashboard-owner/owner-reservations" class="menu-item">
+      {{ 'SIDEBAR.RESERVATIONS' | translate }}
+    </button>
+
+    <!-- Ruta a Owner Security -->
+    <button mat-button routerLink="/dashboard-owner/owner-security" class="menu-item">
+      {{ 'SIDEBAR.TRACKING_AND_ALARMS' | translate }}
+    </button>
+
+    <!-- Ruta a Configuración -->
+    <button mat-button routerLink="/dashboard-owner/owner-configuration" class="menu-item">
+      {{ 'SIDEBAR.SETTINGS' | translate }}
+    </button>
+
+    <!-- Ruta para Cerrar Sesión -->
+    <button mat-button routerLink="/sign-in" class="menu-item">
+      {{ 'SIDEBAR.LOGOUT' | translate }}
+    </button>
+  </nav>
+</aside>

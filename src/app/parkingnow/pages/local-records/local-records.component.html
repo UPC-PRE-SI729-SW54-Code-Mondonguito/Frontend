@@ -1,0 +1,28 @@
+<div class="local-records-container">
+  <!-- Botón de cambio de idioma -->
+  <button mat-stroked-button color="accent" class="language-switch" (click)="switchLanguage()">
+    {{ 'LOCAL_RECORDS.SWITCH_LANGUAGE' | translate }}
+  </button>
+
+  <!-- Botón de Inicio -->
+  <button mat-stroked-button color="primary" class="back-button" routerLink="/dashboard-owner">
+    {{ 'LOCAL_RECORDS.BACK_TO_HOME' | translate }}
+  </button>
+
+  <mat-card class="header-card">
+    <h1>{{ 'LOCAL_RECORDS.WELCOME' | translate }}</h1>
+    <p>{{ 'LOCAL_RECORDS.MANAGE_RECORDS' | translate }}</p>
+  </mat-card>
+
+  <div class="cards-section">
+    <mat-card class="card animate-card">
+      <h2>{{ 'LOCAL_RECORDS.TITLE' | translate }}</h2>
+      <p>{{ 'LOCAL_RECORDS.RECORDS' | translate }}</p>
+    </mat-card>
+
+    <mat-card class="card animate-card">
+      <h2>{{ 'LOCAL_RECORDS.STATISTICS' | translate }}</h2>
+      <p>{{ 'LOCAL_RECORDS.STATISTICS_DESC' | translate }}</p>
+    </mat-card>
+  </div>
+</div>

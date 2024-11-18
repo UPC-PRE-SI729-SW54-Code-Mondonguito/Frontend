@@ -1,0 +1,78 @@
+<div class="owner-reservations-container">
+  <!-- Botón para ir al inicio -->
+  <div class="back-to-home">
+    <button mat-stroked-button color="primary" routerLink="/dashboard-owner">
+      {{ 'OWNER_RESERVATIONS.BACK_TO_HOME' | translate }}
+    </button>
+  </div>
+
+  <mat-card class="header-card">
+    <h1>{{ 'OWNER_RESERVATIONS.TITLE' | translate }}</h1>
+    <p>{{ 'OWNER_RESERVATIONS.DESCRIPTION' | translate }}</p>
+  </mat-card>
+
+  <!-- Sección de filtros de búsqueda -->
+  <div class="filter-section">
+    <mat-form-field class="filter-field" appearance="fill">
+      <mat-label>{{ 'OWNER_RESERVATIONS.FILTER.RESERVATION_ID' | translate }}</mat-label>
+      <input matInput placeholder="{{ 'OWNER_RESERVATIONS.FILTER.RESERVATION_ID' | translate }}" [(ngModel)]="filter.id">
+    </mat-form-field>
+
+    <mat-form-field class="filter-field" appearance="fill">
+      <mat-label>{{ 'OWNER_RESERVATIONS.FILTER.RESERVATION_DATE' | translate }}</mat-label>
+      <input matInput [matDatepicker]="datePicker" placeholder="{{ 'OWNER_RESERVATIONS.FILTER.RESERVATION_DATE' | translate }}" [(ngModel)]="filter.date">
+      <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="filter-field" appearance="fill">
+      <mat-label>{{ 'OWNER_RESERVATIONS.FILTER.USER' | translate }}</mat-label>
+      <input matInput placeholder="{{ 'OWNER_RESERVATIONS.FILTER.USER' | translate }}" [(ngModel)]="filter.user">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="applyFilter()">
+      {{ 'OWNER_RESERVATIONS.FILTER.APPLY_FILTER' | translate }}
+    </button>
+  </div>
+
+  <!-- Tabla de Reservas -->
+  <div class="reservations-table-section">
+    <mat-card class="reservations-card">
+      <h2>{{ 'OWNER_RESERVATIONS.RESERVATIONS_LIST' | translate }}</h2>
+      <mat-table [dataSource]="filteredReservations" class="mat-elevation-z8">
+
+        <!-- ID de Reserva -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> {{ 'OWNER_RESERVATIONS.TABLE_HEADERS.ID' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let reservation"> {{ reservation.id }} </mat-cell>
+        </ng-container>
+
+        <!-- Usuario -->
+        <ng-container matColumnDef="user">
+          <mat-header-cell *matHeaderCellDef> {{ 'OWNER_RESERVATIONS.TABLE_HEADERS.USER' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let reservation"> {{ reservation.user }} </mat-cell>
+        </ng-container>
+
+        <!-- Fecha -->
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef> {{ 'OWNER_RESERVATIONS.TABLE_HEADERS.DATE' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let reservation"> {{ reservation.date | date }} </mat-cell>
+        </ng-container>
+
+        <!-- Acción -->
+        <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef> {{ 'OWNER_RESERVATIONS.TABLE_HEADERS.ACTION' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let reservation">
+            <button mat-button color="warn" (click)="cancelReservation(reservation.id)">
+              {{ 'OWNER_RESERVATIONS.CANCEL' | translate }}
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Filas -->
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card>
+  </div>
+</div>

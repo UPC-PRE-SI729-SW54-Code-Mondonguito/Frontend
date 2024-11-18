@@ -14,31 +14,40 @@ export class RegisterOwnerComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private translate: TranslateService // Servicio de traducción
+    private translate: TranslateService
   ) {
+    // Configuración del formulario reactivo
     this.registerOwnerForm = this.fb.group({
       fullName: ['', Validators.required],
       businessName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      ruc: ['', Validators.required],
+      ruc: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
       address: ['', Validators.required]
-    });
+    }, { validator: this.passwordsMatch });
+  }
+
+  // Validador personalizado para confirmar que las contraseñas coincidan
+  private passwordsMatch(group: FormGroup): { [key: string]: boolean } | null {
+    const password = group.get('password')?.value;
+    const confirmPassword = group.get('confirmPassword')?.value;
+    return password === confirmPassword ? null : { notMatching: true };
   }
 
   // Cambiar idioma
-  switchLanguage(language: string) {
+  switchLanguage(language: string): void {
     this.translate.use(language);
   }
 
-  onSubmit() {
+  // Envío del formulario
+  onSubmit(): void {
     if (this.registerOwnerForm.valid) {
-      // Lógica de registro, como enviar datos al backend
-      console.log('Formulario válido', this.registerOwnerForm.value);
-
-      // Redirigir al dashboard del dueño
-      this.router.navigate(['/dashboard-owner']);
+      console.log('Formulario válido:', this.registerOwnerForm.value);
+      this.router.navigate(['/dashboard-owner']); // Redirige al Dashboard del Propietario
+    } else {
+      console.log('Formulario inválido');
+      this.registerOwnerForm.markAllAsTouched(); // Marca todos los campos como tocados para mostrar errores
     }
   }
 }
