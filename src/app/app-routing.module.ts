@@ -57,16 +57,6 @@ const routes: Routes = [
     ],
   },
 
-  // Funcionalidades comunes
-  { path: 'reservations', component: ReservationsComponent },
-  { path: 'support', component: SupportComponent },
-  { path: 'vehicle-tracking', component: VehicleTrackingComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'notifications', component: NotificationsComponent },
-
-  // Logout
-  { path: 'logout', redirectTo: 'sign-in', pathMatch: 'full' },
-
   // Ruta de Page Not Found
   { path: '**', component: PageNotFoundComponent }, // Aquí se agrega el manejo de rutas no existentes
 ];

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -11,7 +12,11 @@ export class SignInComponent implements OnInit {
   loginForm!: FormGroup; // Formulario reactivo
   isSubmitting: boolean = false; // Indica si el formulario está en proceso de envío
 
-  constructor(private fb: FormBuilder, private translate: TranslateService) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private translate: TranslateService
+  ) {
     // Idioma predeterminado
     this.translate.setDefaultLang('es');
   }
@@ -36,16 +41,31 @@ export class SignInComponent implements OnInit {
     this.isSubmitting = true;
 
     if (this.loginForm.valid) {
-      console.log('Formulario válido:', this.loginForm.value);
+      const { email, password } = this.loginForm.value;
 
-      // Simula un proceso de envío
-      setTimeout(() => {
+      // Mock de usuarios
+      const mockUsers = [
+        { email: 'driver@example.com', password: 'password123', role: 'driver' },
+        { email: 'owner@example.com', password: 'password123', role: 'owner' }
+      ];
+
+      // Verificar credenciales
+      const user = mockUsers.find(u => u.email === email && u.password === password);
+
+      if (user) {
         this.isSubmitting = false;
-        alert('Inicio de sesión exitoso'); // Puedes reemplazar esto con tu lógica de inicio de sesión
-      }, 2000);
+        if (user.role === 'driver') {
+          this.router.navigate(['/dashboard-driver']);
+        } else if (user.role === 'owner') {
+          this.router.navigate(['/dashboard-owner']);
+        }
+      } else {
+        this.isSubmitting = false;
+        alert('Credenciales incorrectas'); // Manejo de errores
+      }
     } else {
       this.isSubmitting = false;
-      console.log('Formulario no válido');
+      alert('Por favor, completa todos los campos correctamente.');
     }
   }
 }
