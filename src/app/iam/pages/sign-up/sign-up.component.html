@@ -1,0 +1,29 @@
+<div class="language-toggle">
+  <button (click)="switchLanguage('es')">Español</button>
+  <button (click)="switchLanguage('en')">English</button>
+</div>
+
+<div class="register-container">
+  <h2>{{ 'REGISTER.TITLE' | translate }}</h2>
+  <div class="register-options">
+    <!-- Opción para Conductor -->
+    <div class="register-option">
+      <img src="assets/images/Conductor.jpg" alt="{{ 'REGISTER.DRIVER' | translate }}" class="register-image">
+      <h3>{{ 'REGISTER.DRIVER' | translate }}</h3>
+      <p>{{ 'REGISTER.DRIVER_DESCRIPTION' | translate }}</p>
+      <button (click)="navigateToDriver()" class="register-button">
+        {{ 'REGISTER.DRIVER_BUTTON' | translate }}
+      </button>
+    </div>
+
+    <!-- Opción para Dueño de Playa de Estacionamiento -->
+    <div class="register-option">
+      <img src="assets/images/EstacionamientoP.jpg" alt="{{ 'REGISTER.OWNER' | translate }}" class="register-image">
+      <h3>{{ 'REGISTER.OWNER' | translate }}</h3>
+      <p>{{ 'REGISTER.OWNER_DESCRIPTION' | translate }}</p>
+      <button (click)="navigateToOwner()" class="register-button">
+        {{ 'REGISTER.OWNER_BUTTON' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

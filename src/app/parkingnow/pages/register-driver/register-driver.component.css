@@ -1,0 +1,140 @@
+/* Contenedor principal del formulario */
+.register-driver-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #181818; /* Fondo oscuro elegante */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Tarjeta del formulario */
+.register-driver-card {
+  background-color: #222222; /* Fondo más oscuro para la tarjeta */
+  padding: 30px 25px;
+  border-radius: 16px; /* Bordes redondeados suaves */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+  width: 500px; /* Ampliado para un diseño más ancho */
+  text-align: center;
+  color: #ffffff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.register-driver-card:hover {
+  transform: translateY(-5px); /* Efecto de flotación al pasar el mouse */
+}
+
+/* Título del formulario */
+h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Subtítulo del formulario */
+p {
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: #aaaaaa; /* Texto aclarado */
+}
+
+/* Botones para cambiar de idioma */
+.language-switcher {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.language-switcher button:hover {
+  color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Campos del formulario */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-label {
+  color: #b0b0b0 !important; /* Etiquetas más claras */
+}
+
+input.mat-input-element {
+  color: #ffffff; /* Texto de entrada */
+  background-color: #2e2e2e; /* Fondo del campo */
+  border-radius: 4px;
+  padding: 8px;
+}
+
+input::placeholder {
+  color: #666666; /* Placeholder con tono medio */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #444444; /* Color de los bordes */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-start,
+.mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-color: #555555;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-start,
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-end {
+  border-color: #007bff; /* Borde azul al enfocar */
+}
+
+/* Botón de envío */
+button.register-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff; /* Azul vibrante */
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button.register-button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+button.register-button:disabled {
+  background-color: #555555; /* Color para botón deshabilitado */
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Espaciado entre los campos */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.register-driver-card .form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsividad */
+@media screen and (max-width: 480px) {
+  .register-driver-card {
+    width: 100%; /* Asegura que sea responsivo */
+    padding: 20px;
+  }
+}

@@ -1,0 +1,101 @@
+<div class="modal">
+  <form class="form">
+    <div class="credit-card-info--form">
+      <!-- Información de tarjeta -->
+      <div class="input_container">
+        <label class="input_label" for="card_holder">{{ 'PAYMENT.CARD_HOLDER' | translate }}</label>
+        <input
+          [placeholder]="'PAYMENT.PLACEHOLDER_CARD_HOLDER' | translate"
+          name="card-holder"
+          type="text"
+          class="input_field"
+          id="card_holder"
+          required
+        />
+      </div>
+
+      <div class="input_container">
+        <label class="input_label" for="card_number">{{ 'PAYMENT.CARD_NUMBER' | translate }}</label>
+        <input
+          [placeholder]="'PAYMENT.PLACEHOLDER_CARD_NUMBER' | translate"
+          name="card-number"
+          type="number"
+          class="input_field"
+          id="card_number"
+          required
+        />
+      </div>
+
+      <div class="input_container">
+        <label class="input_label" for="expiry_date">{{ 'PAYMENT.EXPIRY_CVV' | translate }}</label>
+        <div class="split">
+          <input
+            [placeholder]="'PAYMENT.PLACEHOLDER_EXPIRY' | translate"
+            name="expiry-date"
+            type="text"
+            class="input_field"
+            id="expiry_date"
+            required
+          />
+          <input
+            [placeholder]="'PAYMENT.PLACEHOLDER_CVV' | translate"
+            name="cvv"
+            type="number"
+            class="input_field"
+            id="cvv"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Precio -->
+      <div class="input_container">
+        <label class="input_label" for="amount">{{ 'PAYMENT.PRICE' | translate }}</label>
+        <input
+          [value]="price"
+          name="amount"
+          type="text"
+          class="input_field"
+          id="amount"
+          disabled
+        />
+      </div>
+
+      <!-- Botón de Checkout -->
+      <button class="purchase--btn" type="button" (click)="completeTransaction()">
+        {{ 'PAYMENT.TRANSACTION_BUTTON' | translate }}
+      </button>
+
+      <!-- Botón de cambio de idioma -->
+      <button
+        type="button"
+        class="language-switch"
+        (click)="switchLanguage(currentLanguage === 'es' ? 'en' : 'es')">
+        Cambiar a {{ currentLanguage === 'es' ? 'Inglés' : 'Español' }}
+      </button>
+
+      <!-- Opciones de pago -->
+      <div class="separator">
+        <hr class="line" />
+        <p>{{ 'PAYMENT.OR_PAY_WITH' | translate }}</p>
+        <hr class="line" />
+      </div>
+      <div class="payment--options">
+        <button type="button" name="visa" (click)="selectPaymentMethod('Visa')">
+          <img src="assets/images/visa.png" alt="Visa" />
+        </button>
+        <button type="button" name="yape" (click)="selectPaymentMethod('Yape')">
+          <img src="assets/images/yape.png" alt="Yape" />
+        </button>
+        <button type="button" name="bcp" (click)="selectPaymentMethod('BCP')">
+          <img src="assets/images/bcp.png" alt="BCP" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Mensaje de transacción completa -->
+    <div *ngIf="transactionComplete" class="transaction-complete">
+      <p>{{ 'PAYMENT.TRANSACTION_COMPLETE' | translate }}</p>
+    </div>
+  </form>
+</div>

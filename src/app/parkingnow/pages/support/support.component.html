@@ -1,0 +1,53 @@
+<div class="support-container mat-elevation-z4">
+  <mat-toolbar color="primary" class="support-toolbar">
+    <span>{{ 'SUPPORT.TITLE' | translate }}</span>
+    <span class="spacer"></span>
+    <button mat-raised-button color="accent" routerLink="/dashboard-driver">{{ 'SUPPORT.BACK_TO_HOME' | translate }}</button>
+    <button mat-raised-button color="accent" (click)="switchLanguage()">{{ 'SETTINGS.LANGUAGE.SPANISH' | translate }}</button>
+  </mat-toolbar>
+
+  <div class="support-content">
+    <!-- Tarjeta de Asistencia Virtual -->
+    <mat-card class="support-card">
+      <mat-card-header>
+        <mat-card-title>{{ 'SUPPORT.VIRTUAL_ASSISTANCE_TITLE' | translate }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ 'SUPPORT.VIRTUAL_ASSISTANCE_DESCRIPTION' | translate }}</p>
+
+        <!-- Formulario de entrada para dudas -->
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>{{ 'SUPPORT.INPUT_LABEL' | translate }}</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">{{ 'SUPPORT.SEND_BUTTON' | translate }}</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- Tarjeta de Contacta con Nosotros -->
+    <mat-card class="support-card">
+      <mat-card-header>
+        <mat-card-title>{{ 'SUPPORT.CONTACT_US_TITLE' | translate }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ 'SUPPORT.CONTACT_US_DESCRIPTION' | translate }}</p>
+        <div class="social-icons">
+          <a href="https://github.com" target="_blank">
+            <mat-icon svgIcon="github"></mat-icon>
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <mat-icon svgIcon="facebook"></mat-icon>
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <mat-icon svgIcon="instagram"></mat-icon>
+          </a>
+          <a href="mailto:support@domain.com">
+            <mat-icon svgIcon="email"></mat-icon>
+          </a>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

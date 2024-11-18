@@ -1,0 +1,35 @@
+<div class="vehicle-tracking-container">
+  <mat-toolbar color="primary">
+    <span>{{ 'VEHICLE_TRACKING.TITLE' | translate }}</span>
+    <span class="spacer"></span>
+    <button mat-raised-button color="accent" routerLink="/dashboard-driver">{{ 'VEHICLE_TRACKING.BACK_TO_HOME' | translate }}</button>
+    <button mat-raised-button color="accent" (click)="switchLanguage()">{{ 'SETTINGS.LANGUAGE.SPANISH' | translate }}</button>
+  </mat-toolbar>
+
+  <div class="content">
+    <div class="left-section">
+      <mat-card class="welcome-card">
+        <div class="card-header">
+          <h1>{{ 'VEHICLE_TRACKING.WELCOME' | translate }}</h1>
+        </div>
+      </mat-card>
+
+      <mat-card class="tracking-card">
+        <h2>{{ 'VEHICLE_TRACKING.REGISTERED_CARS' | translate }}</h2>
+        <p>{{ 'VEHICLE_TRACKING.REGISTERED_CARS_SUBTEXT' | translate }}</p>
+      </mat-card>
+
+      <mat-card class="tracking-card">
+        <h2>{{ 'VEHICLE_TRACKING.LATEST_ALERTS' | translate }}</h2>
+        <p>{{ 'VEHICLE_TRACKING.LATEST_ALERTS_SUBTEXT' | translate }}</p>
+      </mat-card>
+    </div>
+
+    <div class="right-section">
+      <mat-card class="sensor-card">
+        <h2>{{ 'VEHICLE_TRACKING.SENSOR_TITLE' | translate }}</h2>
+        <p>{{ 'VEHICLE_TRACKING.SENSOR_DESCRIPTION' | translate }}</p>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+.owner-reservations-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.back-to-home {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.header-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background: linear-gradient(to right, #e0e0e0, #ffffff);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-field {
+  flex: 1 1 200px;
+  min-width: 250px;
+}
+
+.reservations-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 10px;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 12px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.mat-button {
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.mat-button:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  transform: translateY(-1px);
+}

@@ -1,0 +1,35 @@
+<div class="dashboard-owner-container">
+  <aside class="sidebar">
+    <img src="../../../../assets/images/parkingnow.png" alt="ParkingNow Logo" class="logo">
+    <nav class="menu">
+      <button mat-button routerLink="/dashboard-owner" class="menu-item">{{ 'SIDEBAR.HOME' | translate }}</button>
+      <button mat-button routerLink="/local-records" class="menu-item">{{ 'SIDEBAR.RESERVATIONS' | translate }}</button>
+      <button mat-button routerLink="/owner-reservations" class="menu-item">{{ 'SIDEBAR.RESERVATIONS' | translate }}</button>
+      <button mat-button routerLink="/owner-security" class="menu-item">{{ 'SIDEBAR.TRACKING_AND_ALARMS' | translate }}</button>
+      <button mat-button routerLink="/owner-configuration" class="menu-item">{{ 'SIDEBAR.SETTINGS' | translate }}</button>
+      <button mat-button routerLink="/login" class="menu-item">{{ 'SIDEBAR.LOGOUT' | translate }}</button>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="welcome">
+      <h1>{{ 'DASHBOARD_OWNER.WELCOME' | translate }}</h1>
+    </div>
+
+    <!-- Sección de Reservas para hoy -->
+    <section class="reservations-section">
+      <mat-card class="card">
+        <h2>{{ 'DASHBOARD_OWNER.TODAY_RESERVATIONS' | translate }}</h2>
+        <p>{{ 'DASHBOARD_OWNER.SCHEDULED_RESERVATIONS' | translate }}</p>
+      </mat-card>
+    </section>
+
+    <!-- Sección de Espacios -->
+    <section class="spaces-section">
+      <mat-card class="card">
+        <h2>{{ 'DASHBOARD_OWNER.SPACES' | translate }}</h2>
+        <p>{{ 'DASHBOARD_OWNER.SPACES_DESC' | translate }}</p>
+      </mat-card>
+    </section>
+  </main>
+</div>

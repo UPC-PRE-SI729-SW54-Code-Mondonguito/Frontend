@@ -1,0 +1,73 @@
+<div class="register-owner-container">
+  <mat-card class="register-owner-card">
+    <div class="language-switcher">
+      <button mat-button (click)="switchLanguage('en')">English</button>
+      <button mat-button (click)="switchLanguage('es')">Español</button>
+    </div>
+
+    <h1>{{ 'REGISTER_OWNER.TITLE' | translate }}</h1>
+    <p>{{ 'REGISTER_OWNER.SUBTITLE' | translate }}</p>
+
+    <form [formGroup]="registerOwnerForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_OWNER.FULL_NAME' | translate }}</mat-label>
+        <input matInput formControlName="fullName" />
+        <mat-error *ngIf="registerOwnerForm.get('fullName')?.hasError('required')">
+          {{ 'REGISTER_OWNER.FULL_NAME_ERROR' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_OWNER.BUSINESS_NAME' | translate }}</mat-label>
+        <input matInput formControlName="businessName" />
+        <mat-error *ngIf="registerOwnerForm.get('businessName')?.hasError('required')">
+          {{ 'REGISTER_OWNER.BUSINESS_NAME_ERROR' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_OWNER.EMAIL' | translate }}</mat-label>
+        <input matInput type="email" formControlName="email" />
+        <mat-error *ngIf="registerOwnerForm.get('email')?.hasError('required')">
+          {{ 'REGISTER_OWNER.EMAIL_ERROR' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_OWNER.PASSWORD' | translate }}</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error *ngIf="registerOwnerForm.get('password')?.hasError('required')">
+          {{ 'REGISTER_OWNER.PASSWORD_ERROR' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_OWNER.CONFIRM_PASSWORD' | translate }}</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" />
+        <mat-error *ngIf="registerOwnerForm.get('confirmPassword')?.hasError('required')">
+          {{ 'REGISTER_OWNER.CONFIRM_PASSWORD_ERROR' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_OWNER.RUC' | translate }}</mat-label>
+        <input matInput formControlName="ruc" />
+        <mat-error *ngIf="registerOwnerForm.get('ruc')?.hasError('required')">
+          {{ 'REGISTER_OWNER.RUC_ERROR' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'REGISTER_OWNER.ADDRESS' | translate }}</mat-label>
+        <input matInput formControlName="address" />
+        <mat-error *ngIf="registerOwnerForm.get('address')?.hasError('required')">
+          {{ 'REGISTER_OWNER.ADDRESS_ERROR' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="full-width">
+        {{ 'REGISTER_OWNER.SUBMIT_BUTTON' | translate }}
+      </button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,86 @@
+<div class="reservations-container">
+  <!-- Botón para cambiar de idioma -->
+  <div class="language-switcher">
+    <button mat-button (click)="setLanguage('es')">Español</button>
+    <button mat-button (click)="setLanguage('en')">English</button>
+  </div>
+
+  <mat-card class="reservation-card">
+    <h2>{{ 'RESERVATIONS.TITLE' | translate }}</h2>
+
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'RESERVATIONS.VEHICLE_REGISTRATION_LABEL' | translate }}</mat-label>
+        <input matInput formControlName="vehicleRegistration" placeholder="{{ 'RESERVATIONS.VEHICLE_REGISTRATION_PLACEHOLDER' | translate }}">
+        <mat-error *ngIf="reservationForm.get('vehicleRegistration')?.hasError('required') && reservationForm.get('vehicleRegistration')?.touched">
+          {{ 'RESERVATIONS.VEHICLE_REGISTRATION_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'RESERVATIONS.VEHICLE_TYPE_LABEL' | translate }}</mat-label>
+        <mat-select formControlName="typeOfVehicle">
+          <mat-option value="Motorcycle">{{ 'RESERVATIONS.VEHICLE_TYPE_OPTIONS.MOTORCYCLE' | translate }}</mat-option>
+          <mat-option value="Truck">{{ 'RESERVATIONS.VEHICLE_TYPE_OPTIONS.TRUCK' | translate }}</mat-option>
+          <mat-option value="Car">{{ 'RESERVATIONS.VEHICLE_TYPE_OPTIONS.CAR' | translate }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="reservationForm.get('typeOfVehicle')?.hasError('required') && reservationForm.get('typeOfVehicle')?.touched">
+          {{ 'RESERVATIONS.VEHICLE_TYPE_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'RESERVATIONS.RESERVATION_TIME_LABEL' | translate }}</mat-label>
+        <input matInput formControlName="reservationTime" type="datetime-local">
+        <mat-error *ngIf="reservationForm.get('reservationTime')?.hasError('required') && reservationForm.get('reservationTime')?.touched">
+          {{ 'RESERVATIONS.RESERVATION_TIME_REQUIRED' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" type="submit">{{ 'RESERVATIONS.RESERVE_BUTTON' | translate }}</button>
+        <button mat-raised-button color="accent" type="button" (click)="openPaymentModal()" class="pay-button">
+          {{ 'RESERVATIONS.PAY_BUTTON' | translate }}
+        </button>
+      </div>
+    </form>
+  </mat-card>
+
+  <mat-card class="reservation-list">
+    <h3>{{ 'RESERVATIONS.CURRENT_RESERVATIONS_TITLE' | translate }}</h3>
+
+    <table mat-table [dataSource]="parkingReservations" class="mat-elevation-z8 full-width">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>{{ 'RESERVATIONS.TABLE_HEADERS.ID' | translate }}</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="vehicleRegistration">
+        <th mat-header-cell *matHeaderCellDef>{{ 'RESERVATIONS.TABLE_HEADERS.VEHICLE_REGISTRATION' | translate }}</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.vehicleRegistration }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="typeOfVehicle">
+        <th mat-header-cell *matHeaderCellDef>{{ 'RESERVATIONS.TABLE_HEADERS.VEHICLE_TYPE' | translate }}</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.typeOfVehicle }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="reservationTime">
+        <th mat-header-cell *matHeaderCellDef>{{ 'RESERVATIONS.TABLE_HEADERS.RESERVATION_TIME' | translate }}</th>
+        <td mat-cell *matCellDef="let reservation">{{ reservation.reservationTime }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>{{ 'RESERVATIONS.TABLE_HEADERS.ACTIONS' | translate }}</th>
+        <td mat-cell *matCellDef="let reservation">
+          <button mat-icon-button color="warn" (click)="deleteReservation(reservation.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['id', 'vehicleRegistration', 'typeOfVehicle', 'reservationTime', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['id', 'vehicleRegistration', 'typeOfVehicle', 'reservationTime', 'actions']"></tr>
+    </table>
+  </mat-card>
+</div>
