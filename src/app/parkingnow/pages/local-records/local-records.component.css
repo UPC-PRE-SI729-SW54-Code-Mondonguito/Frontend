@@ -1,4 +1,4 @@
-/* Fondo blanco y estructura */
+/* Contenedor principal */
 .local-records-container {
   background-color: #f9f9f9;
   padding: 50px 20px;
@@ -8,6 +8,7 @@
   min-height: 100vh;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif; /* Fuente más legible */
 }
 
 /* Botón de Inicio */
@@ -21,7 +22,8 @@
   padding: 10px 20px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
 }
 
 .back-button:hover {
@@ -29,7 +31,26 @@
   color: white;
 }
 
-/* Header principal con animación */
+/* Botón para cambiar idioma */
+.language-switch {
+  margin-left: 10px;
+  border: 2px solid #007bff; /* Borde azul */
+  background-color: white;
+  color: #007bff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+
+.language-switch:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Header principal */
 .header-card {
   background-color: #ffffff;
   color: #333;
@@ -42,6 +63,16 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 2px solid #000;
   transition: transform 0.3s ease-in-out; /* Animación suave */
+}
+
+.header-card h1 {
+  font-size: 2rem;
+  color: #007bff; /* Azul destacado */
+}
+
+.header-card p {
+  font-size: 1.2rem;
+  color: #555;
 }
 
 .header-card:hover {
@@ -58,7 +89,7 @@
   flex-wrap: wrap;
 }
 
-/* Tarjetas con bordes negros y colores */
+/* Tarjetas */
 .card {
   background-color: #ffffff;
   color: #333;
@@ -69,26 +100,27 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 2px solid #000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .card h2 {
   margin-bottom: 15px;
-  font-size: 1.4em;
-  color: #007bff; /* Azul para destacar */
+  font-size: 1.5rem;
+  color: #007bff; /* Azul destacado */
 }
 
 .card p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
+  color: #555;
 }
 
-/* Animación suave en las tarjetas */
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   background-color: #f0f8ff; /* Suave cambio de color al hover */
 }
 
+/* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
   .cards-section {
     flex-direction: column;
@@ -96,5 +128,11 @@
 
   .card {
     margin: 0 0 20px 0;
+  }
+
+  .back-button,
+  .language-switch {
+    width: 100%;
+    text-align: center;
   }
 }

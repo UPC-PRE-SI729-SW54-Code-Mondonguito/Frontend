@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard-owner',
@@ -6,9 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-owner.component.css']
 })
 export class DashboardOwnerComponent {
-  ownerName: string = 'Nombre del Dueño';  // Añade una variable para el nombre del dueño
+  ownerName: string = 'Nombre del Dueño'; // Variable para el nombre del dueño
+  currentLanguage: string = 'EN'; // Idioma actual
 
-  constructor() {
-    // Puedes cargar el nombre del dueño desde un servicio o una API
+  constructor(private translate: TranslateService) {
+    // Inicializa el idioma actual
+    this.currentLanguage = this.translate.currentLang?.toUpperCase() || 'EN';
+  }
+
+  /**
+   * Cambia el idioma de la aplicación
+   */
+  switchLanguage(): void {
+    const newLang = this.translate.currentLang === 'en' ? 'es' : 'en';
+    this.translate.use(newLang);
+    this.currentLanguage = newLang.toUpperCase(); // Actualiza el idioma mostrado en el botón
+  }
+
+  /**
+   * Redirige al inicio de sesión al cerrar sesión
+   */
+  logout(): void {
+    window.location.href = '/sign-in'; // Redirige al inicio de sesión
   }
 }

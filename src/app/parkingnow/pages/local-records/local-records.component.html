@@ -1,8 +1,13 @@
 <div class="local-records-container">
-  <!-- Botón de Inicio -->
-  <button mat-stroked-button color="primary" class="back-button" routerLink="/dashboard-owner">
-    {{ 'LOCAL_RECORDS.BACK_TO_HOME' | translate }}
-  </button>
+  <!-- Botones de Inicio y Cambio de Idioma -->
+  <div class="header-buttons">
+    <button mat-stroked-button color="primary" class="back-button" routerLink="/dashboard-owner">
+      {{ 'LOCAL_RECORDS.BACK_TO_HOME' | translate }}
+    </button>
+    <button mat-stroked-button color="accent" class="language-switch" (click)="switchLanguage()">
+      {{ currentLanguage }}
+    </button>
+  </div>
 
   <mat-card class="header-card">
     <h1>{{ 'LOCAL_RECORDS.WELCOME' | translate }}</h1>
@@ -20,4 +25,4 @@
       <p>{{ 'LOCAL_RECORDS.STATISTICS_DESC' | translate }}</p>
     </mat-card>
   </div>
-</div>|
+</div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http'; // Importar HttpClient para ngx-translate
+import { HttpClientModule } from '@angular/common/http'; // Importar HttpClient para ngx-translate
 
 // Angular Material Modules
 import { MatCardModule } from '@angular/material/card';
@@ -15,10 +15,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // ngx-translate
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
 
 // Componentes del módulo ParkingNow
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
@@ -33,18 +34,14 @@ import { VehicleTrackingComponent } from './pages/vehicle-tracking/vehicle-track
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { LocalRecordsComponent } from './pages/local-records/local-records.component';
+import { OwnerReservationsComponent } from './pages/owner-reservations/owner-reservations.component';
 
 // Rutas específicas del módulo ParkingNow
 import { RouterModule, Routes } from '@angular/router';
 
-// Configuración del HttpLoader para las traducciones
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
 // Rutas ajustadas específicamente para ParkingNow
 const routes: Routes = [
-  { path: 'forgot-password', component: ForgotPasswordComponent }, // Ruta para ForgotPasswordComponent
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'register-driver', component: RegisterDriverComponent },
   { path: 'register-owner', component: RegisterOwnerComponent },
   { path: 'dashboard-owner', component: DashboardOwnerComponent },
@@ -54,12 +51,13 @@ const routes: Routes = [
   { path: 'vehicle-tracking', component: VehicleTrackingComponent },
   { path: 'notifications', component: NotificationsComponent },
   { path: 'settings', component: SettingsComponent },
-  { path: '', redirectTo: 'dashboard-owner', pathMatch: 'full' } // Redirección predeterminada
+  { path: 'owner-reservations', component: OwnerReservationsComponent }, // Agregamos la ruta para este componente
+  { path: '', redirectTo: 'dashboard-owner', pathMatch: 'full' },
 ];
 
 @NgModule({
   declarations: [
-    ForgotPasswordComponent, // Declaramos ForgotPasswordComponent
+    ForgotPasswordComponent,
     RegisterDriverComponent,
     RegisterOwnerComponent,
     DashboardOwnerComponent,
@@ -71,19 +69,14 @@ const routes: Routes = [
     NotificationsComponent,
     SettingsComponent,
     LocalRecordsComponent,
+    OwnerReservationsComponent, // Declaramos el nuevo componente
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
+    TranslateModule, // Sin `forRoot` aquí, ya que está en AppModule
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
@@ -95,17 +88,15 @@ const routes: Routes = [
     MatSelectModule,
     MatOptionModule,
     MatToolbarModule,
+    MatDatepickerModule,
+    MatNativeDateModule, // Necesario para el Datepicker
     RouterModule.forChild(routes), // Configura las rutas para este módulo
   ],
   exports: [
-    ForgotPasswordComponent, // Exportamos si se necesita usar fuera del módulo
-    RegisterDriverComponent,
-    RegisterOwnerComponent,
-    DashboardOwnerComponent,
-    DashboardDriverComponent,
-    ReservationsComponent,
-    LocalRecordsComponent,
     RouterModule, // Exportamos RouterModule si es necesario
+  ],
+  providers: [
+    MatDatepickerModule, // Proveemos Datepicker para que funcione correctamente
   ],
 })
 export class ParkingNowModule {}

@@ -1,10 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule, HttpClient } from '@angular/common/http'; // Para ngx-translate
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-// Importar los componentes
 import { SignInComponent } from './iam/pages/sign-in/sign-in.component';
 import { SignUpComponent } from './iam/pages/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './parkingnow/pages/forgot-password/forgot-password.component';
@@ -18,61 +13,42 @@ import { VehicleTrackingComponent } from './parkingnow/pages/vehicle-tracking/ve
 import { SettingsComponent } from './parkingnow/pages/settings/settings.component';
 import { NotificationsComponent } from './parkingnow/pages/notifications/notifications.component';
 import { LocalRecordsComponent } from './parkingnow/pages/local-records/local-records.component';
-import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component'; // Página de error
+import { OwnerReservationsComponent } from './parkingnow/pages/owner-reservations/owner-reservations.component';
+import { OwnerNotificationsComponent } from './parkingnow/pages/owner-notifications/owner-notifications.component';
+import { OwnerSecurityComponent } from './parkingnow/pages/owner-security/owner-security.component';
+import { OwnerConfigurationComponent } from './parkingnow/pages/owner-configuration/owner-configuration.component';
+import { PageNotFoundComponent } from './public/pages/page-not-found/page-not-found.component';
 
-// Configuración para ngx-translate
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
-// Configuración de rutas
 const routes: Routes = [
-  // Ruta inicial
-  { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
-
-  // Rutas de autenticación
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-
-  // Rutas de registro
   { path: 'register-driver', component: RegisterDriverComponent },
   { path: 'register-owner', component: RegisterOwnerComponent },
-
-  // Dashboards
-  {
-    path: 'dashboard-driver',
-    component: DashboardDriverComponent,
-  },
+  { path: 'dashboard-driver', component: DashboardDriverComponent },
   {
     path: 'dashboard-owner',
     component: DashboardOwnerComponent,
     children: [
-      { path: '', redirectTo: 'local-records', pathMatch: 'full' },
-      { path: 'local-records', component: LocalRecordsComponent },
-      { path: 'reservations', component: ReservationsComponent },
-      { path: 'security', component: VehicleTrackingComponent },
-      { path: 'configuration', component: SettingsComponent },
-      { path: 'notifications', component: NotificationsComponent },
+      { path: 'reservations', component: OwnerReservationsComponent },
+      { path: 'notifications', component: OwnerNotificationsComponent },
+      { path: 'security', component: OwnerSecurityComponent },
+      { path: 'configuration', component: OwnerConfigurationComponent },
+      { path: '', redirectTo: 'reservations', pathMatch: 'full' },
     ],
   },
-
-  // Ruta de Page Not Found
-  { path: '**', component: PageNotFoundComponent }, // Aquí se agrega el manejo de rutas no existentes
+  { path: 'reservations', component: ReservationsComponent },
+  { path: 'support', component: SupportComponent },
+  { path: 'vehicle-tracking', component: VehicleTrackingComponent },
+  { path: 'settings', component: SettingsComponent },
+  { path: 'notifications', component: NotificationsComponent },
+  { path: 'local-records', component: LocalRecordsComponent },
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }, // Ruta para manejo de 404
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { useHash: true }),
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
-  ],
-  exports: [RouterModule, TranslateModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

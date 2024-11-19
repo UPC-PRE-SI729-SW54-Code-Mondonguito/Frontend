@@ -3,13 +3,20 @@
     <img src="../../../../assets/images/parkingnow.png" alt="ParkingNow Logo" class="logo">
     <nav class="menu">
       <button mat-button routerLink="/dashboard-owner" class="menu-item">{{ 'SIDEBAR.HOME' | translate }}</button>
-      <button mat-button routerLink="/local-records" class="menu-item">{{ 'SIDEBAR.RESERVATIONS' | translate }}</button>
+      <button mat-button routerLink="/local-records" class="menu-item">{{ 'SIDEBAR.LOCAL_RECORDS' | translate }}</button>
       <button mat-button routerLink="/owner-reservations" class="menu-item">{{ 'SIDEBAR.RESERVATIONS' | translate }}</button>
       <button mat-button routerLink="/owner-security" class="menu-item">{{ 'SIDEBAR.TRACKING_AND_ALARMS' | translate }}</button>
       <button mat-button routerLink="/owner-configuration" class="menu-item">{{ 'SIDEBAR.SETTINGS' | translate }}</button>
-      <button mat-button routerLink="/login" class="menu-item">{{ 'SIDEBAR.LOGOUT' | translate }}</button>
+      <button mat-button (click)="logout()" class="menu-item">{{ 'SIDEBAR.LOGOUT' | translate }}</button>
     </nav>
-  </aside>
+
+    <!-- Botón para cambiar de idioma -->
+    <div class="language-switch">
+      <button mat-stroked-button color="primary" (click)="switchLanguage()">
+        {{ currentLanguage }}
+      </button>
+    </div>
+  </aside> <!-- Cierre del elemento <aside> -->
 
   <main class="content">
     <div class="welcome">

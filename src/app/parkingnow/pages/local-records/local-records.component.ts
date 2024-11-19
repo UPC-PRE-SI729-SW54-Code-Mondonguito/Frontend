@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core'; // Servicio de traducci√
 })
 export class LocalRecordsComponent implements OnInit {
   localForm: FormGroup; // Formulario Reactivo
+  currentLanguage: string = 'ES'; // Idioma actual
 
   constructor(
     private fb: FormBuilder,
@@ -27,6 +28,7 @@ export class LocalRecordsComponent implements OnInit {
 
     // Establece el idioma predeterminado
     this.translate.setDefaultLang('es');
+    this.currentLanguage = this.translate.currentLang.toUpperCase() || 'ES';
   }
 
   ngOnInit(): void {}
@@ -51,5 +53,6 @@ export class LocalRecordsComponent implements OnInit {
     const currentLang = this.translate.currentLang || 'es';
     const newLang = currentLang === 'es' ? 'en' : 'es';
     this.translate.use(newLang);
+    this.currentLanguage = newLang.toUpperCase(); // Actualiza el idioma en el bot√≥n
   }
 }
